@@ -16,7 +16,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="sticky top-0 z-50 bg-primary/90 backdrop-blur-md border-b border-primary-foreground/20">
+    <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
@@ -25,7 +25,7 @@ const Navbar = () => {
             alt="Deskorelax logo"
             className="h-10 w-auto" src="/lovable-uploads/36a29ae7-c05d-4c13-8619-4043a2f8ff82.png" />
 
-          <span className="font-heading font-bold text-xl text-primary-foreground hidden sm:inline">
+          <span className="font-heading font-bold text-xl text-primary hidden sm:inline">
             Deskorelax
           </span>
         </Link>
@@ -38,8 +38,8 @@ const Navbar = () => {
             to={link.to}
             className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
             location.pathname === link.to ?
-            "bg-primary-foreground text-primary" :
-            "text-primary-foreground hover:bg-primary-foreground/20"}`
+            "bg-primary text-primary-foreground" :
+            "text-foreground hover:bg-accent"}`
             }>
 
               {link.label}
@@ -59,7 +59,7 @@ const Navbar = () => {
         {/* Mobile hamburger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-primary-foreground"
+          className="md:hidden p-2 text-foreground"
           aria-label="Menu">
 
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -68,7 +68,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen &&
-      <div className="md:hidden bg-primary border-b border-primary-foreground/20">
+      <div className="md:hidden bg-background border-b border-border">
           <div className="flex flex-col px-4 pb-4 gap-1">
             {navLinks.map((link) =>
           <Link
@@ -77,8 +77,8 @@ const Navbar = () => {
             onClick={() => setIsOpen(false)}
             className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
             location.pathname === link.to ?
-            "bg-primary-foreground text-primary" :
-            "text-primary-foreground hover:bg-primary-foreground/20"}`
+            "bg-primary text-primary-foreground" :
+            "text-foreground hover:bg-accent"}`
             }>
 
                 {link.label}
@@ -88,7 +88,7 @@ const Navbar = () => {
             href="https://www.instagram.com/deskorelax/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-primary-foreground hover:bg-primary-foreground/20 rounded-md">
+            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground hover:bg-accent rounded-md">
 
               <Instagram size={16} /> Instagram
             </a>

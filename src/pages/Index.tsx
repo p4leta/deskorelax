@@ -6,7 +6,7 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative overflow-hidden py-24 md:py-36">
+      <section className="relative overflow-hidden bg-gradient-to-br from-ocean via-ocean-light to-secondary py-24 md:py-36">
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="inline-block mb-6">
             <img alt="Deskorelax" className="h-20 md:h-28 mx-auto" src="/lovable-uploads/2559f7b4-f1f8-459a-abdf-7b73bdb3729c.png" />
@@ -64,7 +64,7 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-primary/30">
+      <section className="py-16 bg-accent/50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">
             Gotowy na przygodę? ☀️
