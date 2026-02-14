@@ -12,7 +12,7 @@ const Index = () => {
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="inline-block mb-6">
-            <img src="/deskorelax-logo.png" alt="Deskorelax" className="h-20 md:h-28 mx-auto" />
+            <img alt="Deskorelax" className="h-20 md:h-28 mx-auto" src="/lovable-uploads/2559f7b4-f1f8-459a-abdf-7b73bdb3729c.png" />
           </div>
           <h1 className="font-heading text-4xl md:text-6xl font-extrabold text-white mb-4 drop-shadow-lg">
             Deskorelax 🏄‍♂️
@@ -23,16 +23,16 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/oferta"
-              className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-semibold px-8 py-3 rounded-full hover:scale-105 transition-transform shadow-lg"
-            >
+              className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-semibold px-8 py-3 rounded-full hover:scale-105 transition-transform shadow-lg">
+
               <Wind size={18} /> Sprawdź ofertę
             </Link>
             <a
               href="https://www.instagram.com/deskorelax/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-white/20 backdrop-blur text-white font-semibold px-8 py-3 rounded-full hover:bg-white/30 transition-colors"
-            >
+              className="inline-flex items-center justify-center gap-2 bg-white/20 backdrop-blur text-white font-semibold px-8 py-3 rounded-full hover:bg-white/30 transition-colors">
+
               <Instagram size={18} /> Śledź nas na IG
             </a>
           </div>
@@ -47,21 +47,21 @@ const Index = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { icon: <Wind size={36} />, title: "Doświadczeni instruktorzy", desc: "Nasz zespół to pasjonaci windsurfingu z wieloletnim doświadczeniem." },
-              { icon: <Waves size={36} />, title: "Idealny spot", desc: "Doskonałe warunki wiatrowe i bezpieczne akweny dla początkujących i zaawansowanych." },
-              { icon: <Sun size={36} />, title: "Luźna atmosfera", desc: "U nas relaks jest najważniejszy — surfing to przede wszystkim zabawa!" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="bg-card rounded-xl p-8 text-center shadow-sm border border-border hover:shadow-md transition-shadow"
-              >
+            { icon: <Wind size={36} />, title: "Doświadczeni instruktorzy", desc: "Nasz zespół to pasjonaci windsurfingu z wieloletnim doświadczeniem." },
+            { icon: <Waves size={36} />, title: "Idealny spot", desc: "Doskonałe warunki wiatrowe i bezpieczne akweny dla początkujących i zaawansowanych." },
+            { icon: <Sun size={36} />, title: "Luźna atmosfera", desc: "U nas relaks jest najważniejszy — surfing to przede wszystkim zabawa!" }].
+            map((item, i) =>
+            <div
+              key={i}
+              className="bg-card rounded-xl p-8 text-center shadow-sm border border-border hover:shadow-md transition-shadow">
+
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary/20 text-secondary mb-4">
                   {item.icon}
                 </div>
                 <h3 className="font-heading text-xl font-semibold mb-2">{item.title}</h3>
                 <p className="text-muted-foreground">{item.desc}</p>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -77,14 +77,14 @@ const Index = () => {
           </p>
           <Link
             to="/kontakt"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-8 py-3 rounded-full hover:scale-105 transition-transform shadow-lg"
-          >
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-8 py-3 rounded-full hover:scale-105 transition-transform shadow-lg">
+
             Skontaktuj się z nami 🤙
           </Link>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>);
+
 };
 
 export default Index;
