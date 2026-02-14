@@ -59,16 +59,10 @@
   }
 
   body {
-    @apply text-foreground font-body;
+    @apply bg-background text-foreground font-body;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
   }
-}
-
-/* Site background - outside @layer for higher specificity */
-body {
-  background: url('/images/site-background.jpg') center / cover fixed no-repeat !important;
-  background-color: hsl(0 0% 100%) !important;
 }
