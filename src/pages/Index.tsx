@@ -7,9 +7,6 @@ const Index = () => {
     <Layout>
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-ocean via-ocean-light to-secondary py-24 md:py-36">
-        <div className="absolute inset-0 opacity-10 text-7xl leading-loose tracking-widest pointer-events-none select-none overflow-hidden">
-          🏄 🌊 🌴 ☀️ 🏄‍♂️ 🌊 🌴 ☀️ 🏄 🌊 🌴 ☀️
-        </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="inline-block mb-6">
             <img alt="Deskorelax" className="h-20 md:h-28 mx-auto" src="/lovable-uploads/2559f7b4-f1f8-459a-abdf-7b73bdb3729c.png" />

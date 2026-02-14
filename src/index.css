@@ -60,8 +60,6 @@
 
   body {
     @apply text-foreground font-body;
-    background: url('/images/site-background.jpg') center / cover fixed no-repeat;
-    background-color: hsl(0 0% 100%);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -69,26 +67,8 @@
   }
 }
 
-/* Surfing emoji background pattern */
-.surf-pattern {
-  position: relative;
-}
-
-.surf-pattern::before {
-  content: '🏄 🌊 🌴 ☀️ 🏄‍♂️ 🌊 🌴 ☀️ 🏄 🌊 🌴 ☀️ 🏄‍♂️ 🌊 🌴 ☀️';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  font-size: 2.5rem;
-  line-height: 5rem;
-  letter-spacing: 3rem;
-  word-spacing: 2rem;
-  opacity: 0.04;
-  pointer-events: none;
-  z-index: 0;
-  transform: rotate(-15deg);
-  white-space: pre-wrap;
-  overflow: hidden;
+/* Site background - outside @layer for higher specificity */
+body {
+  background: url('/images/site-background.jpg') center / cover fixed no-repeat !important;
+  background-color: hsl(0 0% 100%) !important;
 }
