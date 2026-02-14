@@ -6,7 +6,7 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-ocean-dark via-ocean to-secondary py-24 md:py-36">
+      <section className="relative overflow-hidden bg-gradient-to-br from-ocean via-ocean-light to-secondary py-24 md:py-36">
         <div className="absolute inset-0 opacity-10 text-7xl leading-loose tracking-widest pointer-events-none select-none overflow-hidden">
           🏄 🌊 🌴 ☀️ 🏄‍♂️ 🌊 🌴 ☀️ 🏄 🌊 🌴 ☀️
         </div>
