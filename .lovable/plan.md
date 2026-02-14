@@ -1,45 +1,21 @@
 
-# Strona internetowa szkoły windsurfingowej "Deskorelax" 🏄‍♂️
 
-## Ogólny styl
-- **Kolorystyka**: beżowy, jasny niebieski i ciemny niebieski — na wzór logo Deskorelax
-- **Vibe**: luźny, wakacyjny, przyjazny
-- **Tło**: delikatne emoji/ikony surfingowe (🏄 🌊 🌴 ☀️) jako subtelny wzór w tle
-- **Typografia**: nowoczesna, czytelna, z lekkim "plażowym" charakterem
+## Plan: Solid Blue Background for Entire Page
 
-## Nawigacja
-- Górny pasek nawigacyjny z logo Deskorelax i linkami do podstron: O nas, Oferta, Spot, Galeria, Kontakt
-- Ikona Instagrama jako klikalny przycisk w nawigacji, prowadzący do profilu @deskorelax
-- Responsywne menu hamburgerowe na mobile
+### What will change
 
-## Podstrony
+1. **`src/index.css`** - Change the `--background` CSS variable from white (`0 0% 100%`) to a solid blue color (e.g., `210 55% 55%` - a medium blue matching the ocean theme). This will make the entire page body blue.
 
-### Strona główna
-- Hero sekcja z dużym hasłem powitalnym i klimatycznym tłem
-- Krótkie CTA zachęcające do sprawdzenia oferty
-- Przycisk/link do Instagrama
+2. **`src/pages/Index.tsx`** - Remove the hero section gradient (`bg-gradient-to-br from-ocean via-ocean-light to-secondary`) so it blends with the solid blue background instead of having its own gradient.
 
-### O nas
-- Opis szkoły, misja, filozofia "Deskorelax"
-- Placeholder na tekst do uzupełnienia
+3. **`src/pages/Index.tsx`** - Update text and card colors as needed to ensure readability on the blue background (e.g., white text for sections, semi-transparent white cards).
 
-### Oferta
-- Karty/sekcje z placeholderami na przyszłe kursy i pakiety
-- Struktura gotowa do łatwego uzupełnienia treścią
+4. **Other pages** (About, Contact, Gallery, Offer, Spot) - Quick check and adjust any section backgrounds that clash with the new solid blue body.
 
-### Spot
-- Opis lokalizacji / spotu windsurfingowego
-- Placeholder na mapę i opis warunków
+5. **`src/components/Footer.tsx`** - Potentially simplify the footer background since the page is already blue.
 
-### Galeria
-- Osadzenie postów z Instagrama @deskorelax (embed)
-- Estetyczny układ galerii
+### Technical details
 
-### Kontakt
-- Dane kontaktowe: telefon, email, adres
-- Ikona/link do Instagrama
-- Opcjonalnie osadzona mapa Google
-
-## Elementy wspólne
-- Stopka z danymi kontaktowymi, linkiem do IG i prawami autorskimi
-- Responsywność na wszystkich urządzeniach (desktop, tablet, mobile)
+- The `--background` variable controls `bg-background` used globally via Tailwind
+- Cards, popovers, dialogs etc. use `bg-card` / `bg-background` - these may need to stay lighter for contrast, so we may set `--card` to white while `--background` is blue
+- The `--foreground` text color will need to become white/light to be readable on blue
