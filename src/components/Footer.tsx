@@ -1,6 +1,8 @@
 import { Instagram, Phone, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
+const googleMapsLink = "https://maps.app.goo.gl/5q5J3zmwxKsyaU7N6";
+
 const Footer = () => {
   return (
     <footer className="bg-ocean-dark text-primary-foreground mt-auto">
@@ -31,14 +33,19 @@ const Footer = () => {
             <h4 className="font-heading font-semibold mb-3">Kontakt</h4>
             <div className="flex flex-col gap-2 text-sm">
               <div className="flex items-center gap-2 opacity-80">
-                <Phone size={14} /> +48 123 456 789
+                <Phone size={14} /> +48 696 246 459
               </div>
               <div className="flex items-center gap-2 opacity-80">
-                <Mail size={14} /> kontakt@deskorelax.pl
+                <Mail size={14} /> deskorelaxkretowiny@gmail.com
               </div>
-              <div className="flex items-center gap-2 opacity-80">
-                <MapPin size={14} /> Polska
-              </div>
+              <a
+                href={googleMapsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity"
+              >
+                <MapPin size={14} /> Kretowiny 28F, 14-300 Kretowiny
+              </a>
               <a
                 href="https://www.instagram.com/deskorelax/"
                 target="_blank"

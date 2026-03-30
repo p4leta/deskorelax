@@ -1,6 +1,9 @@
 import Layout from "@/components/Layout";
 import { MapPin, Wind, Thermometer, Waves } from "lucide-react";
 
+const googleMapsLink = "https://maps.app.goo.gl/5q5J3zmwxKsyaU7N6";
+const googleMapsEmbed = "https://www.google.com/maps?q=Deskorelax%20Kretowiny&output=embed";
+
 const Spot = () => {
   return (
     <Layout>
@@ -18,16 +21,29 @@ const Spot = () => {
               <MapPin size={24} className="text-secondary" /> Lokalizacja
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Nasz spot to doskonałe miejsce zarówno dla początkujących, jak i zaawansowanych windsurferów. 
+              Nasz spot to doskonałe miejsce zarówno dla początkujących, jak i zaawansowanych windsurferów.
               Płytka woda, stabilny wiatr i piaszczyste dno tworzą idealne warunki do nauki i rozwijania umiejętności.
             </p>
 
-            {/* Map placeholder */}
-            <div className="w-full h-64 md:h-80 rounded-lg bg-muted flex items-center justify-center text-muted-foreground border border-border">
-              <div className="text-center">
-                <MapPin size={40} className="mx-auto mb-2 opacity-50" />
-                <p className="text-sm">Mapa zostanie dodana wkrótce</p>
-              </div>
+            <div className="overflow-hidden rounded-xl border border-border shadow-lg bg-white/20">
+              <iframe
+                title="Mapa Google Deskorelax"
+                src={googleMapsEmbed}
+                className="w-full h-64 md:h-80"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+
+            <div className="mt-4">
+              <a
+                href={googleMapsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-white/20 px-5 py-3 text-sm font-semibold text-card-foreground transition-colors hover:bg-white/30"
+              >
+                <MapPin size={16} /> Otwórz w Google Maps
+              </a>
             </div>
           </div>
 

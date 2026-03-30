@@ -1,6 +1,8 @@
 import Layout from "@/components/Layout";
 import { Phone, Mail, MapPin, Instagram } from "lucide-react";
 
+const googleMapsLink = "https://maps.app.goo.gl/5q5J3zmwxKsyaU7N6";
+
 const Contact = () => {
   return (
     <Layout>
@@ -21,7 +23,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-heading font-semibold mb-1">Telefon</h3>
-                  <p className="text-muted-foreground">+48 123 456 789</p>
+                  <p className="text-muted-foreground">+48 696 246 459</p>
                 </div>
               </div>
 
@@ -31,7 +33,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-heading font-semibold mb-1">Email</h3>
-                  <p className="text-muted-foreground">kontakt@deskorelax.pl</p>
+                  <p className="text-muted-foreground">deskorelaxkretowiny@gmail.com</p>
                 </div>
               </div>
 
@@ -41,7 +43,14 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-heading font-semibold mb-1">Adres</h3>
-                  <p className="text-muted-foreground">Polska (dokładny adres wkrótce)</p>
+                  <a
+                    href={googleMapsLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:underline"
+                  >
+                    Kretowiny 28F, 14-300 Kretowiny
+                  </a>
                 </div>
               </div>
 
@@ -55,7 +64,7 @@ const Contact = () => {
                     href="https://www.instagram.com/deskorelax/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-secondary hover:underline"
+                    className="text-black hover:underline"
                   >
                     @deskorelax
                   </a>

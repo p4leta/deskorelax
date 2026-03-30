@@ -6,49 +6,49 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 210 30% 20%;
+    --background: 36 42% 90%;
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 99%;
-    --card-foreground: 210 30% 20%;
+    --card: 168 52% 91%;
+    --card-foreground: 177 52% 20%;
 
-    --popover: 0 0% 99%;
-    --popover-foreground: 210 30% 20%;
+    --popover: 168 52% 91%;
+    --popover-foreground: 177 52% 20%;
 
     --primary: 210 55% 45%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 200 55% 65%;
-    --secondary-foreground: 210 40% 15%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 20% 95%;
-    --muted-foreground: 210 15% 50%;
+    --muted: 168 32% 84%;
+    --muted-foreground: 174 23% 32%;
 
-    --accent: 40 50% 92%;
-    --accent-foreground: 210 30% 20%;
+    --accent: 34 38% 62%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 15% 90%;
-    --input: 210 15% 90%;
+    --border: 168 32% 79%;
+    --input: 168 32% 79%;
     --ring: 210 55% 45%;
 
     --radius: 0.75rem;
 
-    --sand: 40 40% 97%;
-    --sand-dark: 40 25% 88%;
+    --sand: 168 52% 91%;
+    --sand-dark: 168 32% 79%;
     --ocean-light: 200 55% 65%;
     --ocean: 210 50% 50%;
     --ocean-dark: 215 45% 35%;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 210 30% 20%;
+    --sidebar-background: 36 40% 89%;
+    --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 210 55% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 40 50% 92%;
-    --sidebar-accent-foreground: 210 30% 20%;
-    --sidebar-border: 210 15% 90%;
+    --sidebar-accent: 34 38% 62%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 34 24% 76%;
     --sidebar-ring: 210 55% 45%;
   }
 }
@@ -67,8 +67,29 @@
   }
 }
 
+@layer components {
+  .bg-card {
+    background-color: #dff3ef;
+    border-color: #b7ddd5;
+  }
+
+  .bg-card h1,
+  .bg-card h2,
+  .bg-card h3,
+  .bg-card h4,
+  .bg-card h5,
+  .bg-card h6 {
+    color: #184c4a;
+  }
+
+  .bg-card p,
+  .bg-card li {
+    color: #3f6663;
+  }
+}
+
 /* Site background - outside @layer for higher specificity */
 body {
   background: url('/images/site-background.jpg') center / cover fixed no-repeat !important;
-  background-color: hsl(0 0% 100%) !important;
+  background-color: hsl(36 42% 90%) !important;
 }

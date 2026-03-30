@@ -6,7 +6,7 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative overflow-hidden py-24 md:py-36">
+      <section className="relative overflow-hidden pt-24 pb-12 md:pt-36 md:pb-16">
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="inline-block mb-6">
             <img alt="Deskorelax" className="h-20 md:h-28 mx-auto" src="/lovable-uploads/2559f7b4-f1f8-459a-abdf-7b73bdb3729c.png" />
@@ -20,7 +20,7 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/oferta"
-              className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-semibold px-8 py-3 rounded-full hover:scale-105 transition-transform shadow-lg">
+              className="inline-flex items-center justify-center gap-2 bg-card text-card-foreground font-semibold px-8 py-3 rounded-full border border-border hover:scale-105 transition-transform shadow-lg">
 
               <Wind size={18} /> Sprawdź ofertę
             </Link>
@@ -28,7 +28,7 @@ const Index = () => {
               href="https://www.instagram.com/deskorelax/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-white/20 backdrop-blur text-white font-semibold px-8 py-3 rounded-full hover:bg-white/30 transition-colors">
+              className="inline-flex items-center justify-center gap-2 bg-card text-card-foreground font-semibold px-8 py-3 rounded-full border border-border hover:bg-card/90 transition-colors shadow-lg">
 
               <Instagram size={18} /> Śledź nas na IG
             </a>
@@ -37,7 +37,7 @@ const Index = () => {
       </section>
 
       {/* Features */}
-      <section className="py-16 md:py-24">
+      <section className="py-10 md:py-14">
         <div className="container mx-auto px-4">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-12">
             Dlaczego Deskorelax? 🌊
@@ -64,7 +64,7 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-accent/50">
+      <section className="py-16 bg-[linear-gradient(135deg,rgba(223,243,239,0.34)_0%,rgba(183,221,213,0.24)_42%,rgba(24,76,74,0.18)_100%)] backdrop-blur-[1px]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">
             Gotowy na przygodę? ☀️
