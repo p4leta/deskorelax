@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Outfit:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&family=Rye&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -85,6 +85,48 @@
   .bg-card p,
   .bg-card li {
     color: #3f6663;
+  }
+
+  .hero-wordmark {
+    width: min(100%, 1080px);
+    margin-inline: auto;
+  }
+
+  .hero-wordmark-top {
+    font-family: "Rye", serif;
+    fill: #3498db;
+    paint-order: stroke;
+    stroke: #f6cfaa;
+    stroke-width: 8px;
+    stroke-linejoin: round;
+  }
+
+  .hero-wordmark-main {
+    font-family: "Rye", serif;
+    fill: #3498db;
+    paint-order: stroke;
+    stroke: #f6cfaa;
+    stroke-width: 12px;
+    stroke-linejoin: round;
+  }
+
+  .hero-wordmark-palm-fill {
+    fill: #f6cfaa;
+  }
+
+  .hero-wordmark-palm-stroke {
+    fill: none;
+    stroke: #3498db;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .subpage-title-kretowiny {
+    font-family: "Bowlby One SC", cursive;
+    color: #3498db;
+    text-shadow: 4px 4px 0 #f6cfaa;
+    letter-spacing: 0.03em;
+    line-height: 1.05;
   }
 }
 

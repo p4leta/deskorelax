@@ -1,40 +1,56 @@
 import Layout from "@/components/Layout";
-import { Heart, Award, Users } from "lucide-react";
+import { Award, Heart, Users } from "lucide-react";
 
 const About = () => {
   return (
     <Layout>
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h1 className="font-heading text-4xl md:text-5xl font-extrabold text-center mb-6">
-            O nas 🌴
-          </h1>
-          <p className="text-center text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
-            Poznaj Deskorelax — szkołę windsurfingową, w której pasja spotyka się z relaksem.
+        <div className="container mx-auto max-w-4xl px-4">
+          <h1 className="subpage-title-kretowiny mb-6 text-center text-4xl font-extrabold md:text-5xl">O nas</h1>
+          <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-muted-foreground">
+            Poznaj Deskorelax - szkołę windsurfingową, w której pasja spotyka się z relaksem.
           </p>
 
-          <div className="bg-card rounded-xl border border-border p-8 md:p-12 mb-12">
-            <h2 className="font-heading text-2xl font-bold mb-4">Nasza historia</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Deskorelax to szkoła windsurfingowa stworzona przez pasjonatów sportów wodnych. Wierzymy, że windsurfing to nie tylko sport — to styl życia. Naszą misją jest dzielenie się tą pasją z każdym, kto chce spróbować swoich sił na desce.
+          <div className="mb-12 rounded-xl border border-border bg-card p-8 md:p-12">
+            <h2 className="mb-4 font-heading text-2xl font-bold">Nasza historia</h2>
+            <p className="mb-4 leading-relaxed text-muted-foreground">
+              Jesteśmy trójką przyjaciół, których połączyła jedna rzecz - ogromna zajawka do sportów wodnych.
+              Deskorelax powstał nad naszym jeziorem ponad 15 lat temu, zupełnie naturalnie - jako projekt dla
+              znajomych, wspólne pływanie, wakacje spędzane nad wodą i klimat, którego nie da się stworzyć na siłę.
+              Chodziło po prostu o to, żeby spędzać najlepsze lato w życiu: dużo wody, dużo wiatru, dobra ekipa i
+              totalny chill.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Niezależnie od tego, czy dopiero zaczynasz, czy jesteś doświadczonym surferem — u nas znajdziesz idealne warunki do nauki i doskonalenia swoich umiejętności w luźnej, przyjaznej atmosferze.
+            <p className="mb-4 leading-relaxed text-muted-foreground">
+              Z czasem z tej pasji powstała szkółka, ale jedno się nie zmieniło - wciąż robimy to z dokładnie takim
+              samym podejściem. Bez nadęcia, za to z ogromną energią i miłością do wody. Chcemy pokazać ludziom, jak
+              wciągające mogą być sporty wodne i jak wiele radości daje pływanie, wiatr w żaglu i letnie dni spędzone
+              nad jeziorem.
+            </p>
+            <p className="leading-relaxed text-muted-foreground">
+              Do dziś Deskorelax to przede wszystkim ludzie, klimat i wspólna zajawka.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {[
-              { icon: <Heart size={28} />, title: "Pasja", desc: "Windsurfing to nasza miłość. Dzielimy się nią z radością!" },
-              { icon: <Award size={28} />, title: "Doświadczenie", desc: "Wykwalifikowani instruktorzy z certyfikatami i latami praktyki." },
-              { icon: <Users size={28} />, title: "Społeczność", desc: "Budujemy społeczność surferów, którzy się wspierają i bawią." },
-            ].map((item, i) => (
-              <div key={i} className="bg-card rounded-xl border border-border p-6 text-center">
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-secondary/20 text-secondary mb-3">
+              { icon: <Heart size={28} />, title: "Pasja", desc: "Windsurfing to nasza miłość. Dzielimy się nią z radością." },
+              {
+                icon: <Award size={28} />,
+                title: "Doświadczenie",
+                desc: "Wykwalifikowani instruktorzy z certyfikatami i latami praktyki.",
+              },
+              {
+                icon: <Users size={28} />,
+                title: "Społeczność",
+                desc: "Budujemy społeczność surferów, którzy się wspierają i dobrze bawią.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-xl border border-border bg-card p-6 text-center">
+                <div className="mb-3 inline-flex h-14 w-14 items-center justify-center rounded-full bg-secondary/20 text-secondary">
                   {item.icon}
                 </div>
-                <h3 className="font-heading text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-muted-foreground text-sm">{item.desc}</p>
+                <h3 className="mb-2 font-heading text-lg font-semibold">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>

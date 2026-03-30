@@ -8,7 +8,7 @@ const Trips = () => {
     <Layout>
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-center mb-12 text-foreground">
+          <h1 className="subpage-title-kretowiny text-4xl md:text-5xl font-bold text-center mb-12">
             Wyjazdy
           </h1>
 

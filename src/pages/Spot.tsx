@@ -9,7 +9,7 @@ const Spot = () => {
     <Layout>
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h1 className="font-heading text-4xl md:text-5xl font-extrabold text-center mb-6">
+          <h1 className="subpage-title-kretowiny text-4xl md:text-5xl font-extrabold text-center mb-6">
             Nasz Spot 📍
           </h1>
           <p className="text-center text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
