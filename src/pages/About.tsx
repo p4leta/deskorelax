@@ -1,54 +1,95 @@
 import Layout from "@/components/Layout";
+import PageHero from "@/components/PageHero";
 import { Award, Heart, Users } from "lucide-react";
+import aboutHeroWindsurf from "@/assets/about-hero-windsurf.jpg";
+
+const values = [
+  {
+    icon: <Heart size={28} />,
+    title: "Pasja",
+    desc: "Windsurfing to nasza miłość. Dzielimy się nią z radością.",
+  },
+  {
+    icon: <Award size={28} />,
+    title: "Doświadczenie",
+    desc: "Wykwalifikowani instruktorzy z certyfikatami i latami praktyki.",
+  },
+  {
+    icon: <Users size={28} />,
+    title: "Społeczność",
+    desc: "Budujemy społeczność surferów, którzy się wspierają i dobrze bawią.",
+  },
+];
+
+const valueVariants = [
+  {
+    card: "editorial-card surface-seafoam",
+    icon: "icon-badge-seafoam text-primary",
+    title: "text-foreground",
+    desc: "text-muted-foreground",
+  },
+  {
+    card: "editorial-card surface-sunset",
+    icon: "icon-badge-sunset",
+    title: "text-foreground",
+    desc: "text-muted-foreground",
+  },
+  {
+    card: "editorial-card-dark surface-ocean",
+    icon: "icon-badge-ocean",
+    title: "text-white",
+    desc: "text-white/74",
+  },
+];
 
 const About = () => {
   return (
     <Layout>
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto max-w-4xl px-4">
-          <h1 className="subpage-title-kretowiny mb-6 text-center text-4xl font-extrabold md:text-5xl">O nas</h1>
-          <div className="mb-12 rounded-xl border border-border bg-card p-8 md:p-12">
-            <h2 className="mb-4 font-heading text-2xl font-bold">Nasza historia</h2>
-            <p className="mb-4 leading-relaxed text-muted-foreground">
-              Jesteśmy trójką przyjaciół, których połączyła jedna rzecz - ogromna zajawka do sportów wodnych.
-              Deskorelax powstał nad naszym jeziorem ponad 15 lat temu, zupełnie naturalnie - jako projekt dla
-              znajomych, wspólne pływanie, wakacje spędzane nad wodą i klimat, którego nie da się stworzyć na siłę.
-              Chodziło po prostu o to, żeby spędzać najlepsze lato w życiu: dużo wody, dużo wiatru, dobra ekipa i
-              totalny chill.
-            </p>
-            <p className="mb-4 leading-relaxed text-muted-foreground">
-              Z czasem z tej pasji powstała szkółka, ale jedno się nie zmieniło - wciąż robimy to z dokładnie takim
-              samym podejściem. Bez nadęcia, za to z ogromną energią i miłością do wody. Chcemy pokazać ludziom, jak
-              wciągające mogą być sporty wodne i jak wiele radości daje pływanie, wiatr w żaglu i letnie dni spędzone
-              nad jeziorem.
-            </p>
-            <p className="leading-relaxed text-muted-foreground">
-              Do dziś Deskorelax to przede wszystkim ludzie, klimat i wspólna zajawka.
-            </p>
-          </div>
+      <PageHero
+        eyebrow="O nas"
+        title="Nasza historia"
+        description={`Jesteśmy trójką przyjaciół, których połączyła jedna rzecz - ogromna zajawka do sportów wodnych. Deskorelax powstał nad naszym jeziorem ponad 15 lat temu, zupełnie naturalnie - jako projekt dla znajomych, wspólne pływanie, wakacje spędzane nad wodą i klimat, którego nie da się stworzyć na siłę. Chodziło po prostu o to, żeby spędzać najlepsze lato w życiu: dużo wody, dużo wiatru, dobra ekipa i totalny chill.
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {[
-              { icon: <Heart size={28} />, title: "Pasja", desc: "Windsurfing to nasza miłość. Dzielimy się nią z radością." },
-              {
-                icon: <Award size={28} />,
-                title: "Doświadczenie",
-                desc: "Wykwalifikowani instruktorzy z certyfikatami i latami praktyki.",
-              },
-              {
-                icon: <Users size={28} />,
-                title: "Społeczność",
-                desc: "Budujemy społeczność surferów, którzy się wspierają i dobrze bawią.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="rounded-xl border border-border bg-card p-6 text-center">
-                <div className="mb-3 inline-flex h-14 w-14 items-center justify-center rounded-full bg-secondary/20 text-secondary">
+Z czasem z tej pasji powstała szkółka, ale jedno się nie zmieniło - wciąż robimy to z dokładnie takim samym podejściem. Bez nadęcia, za to z ogromną energią i miłością do wody. Chcemy pokazać ludziom, jak wciągające mogą być sporty wodne i jak wiele radości daje pływanie, wiatr w żaglu i letnie dni spędzone nad jeziorem.
+
+Do dziś Deskorelax to przede wszystkim ludzie, klimat i wspólna zajawka.`}
+        className="pb-6 md:pb-8"
+        panelClassName="surface-seafoam"
+        descriptionClassName="max-w-3xl whitespace-pre-line"
+        contentClassName="lg:max-w-[44rem]"
+        asideClassName="w-full lg:w-[32rem] xl:w-[36rem]"
+        aside={
+          <div className="editorial-card surface-sunset p-2 md:p-3">
+            <div className="media-frame min-h-[360px] w-full overflow-hidden rounded-[1.55rem]">
+              <img
+                src={aboutHeroWindsurf}
+                alt="Windsurfing w Deskorelax"
+                className="h-full min-h-[360px] w-full object-cover"
+              />
+            </div>
+          </div>
+        }
+      />
+
+      <section className="px-4 py-4 md:pb-16">
+        <div className="container mx-auto">
+          <div className="grid gap-6 md:grid-cols-3">
+            {values.map((item, index) => {
+              const variant = valueVariants[index];
+
+              return (
+              <article key={item.title} className={`${variant.card} p-8 text-center md:p-10`}>
+                <div className={`mx-auto mb-6 h-20 w-20 ${variant.icon}`}>
                   {item.icon}
                 </div>
-                <h3 className="mb-2 font-heading text-lg font-semibold">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
-              </div>
-            ))}
+                <h3 className={`font-heading text-3xl font-semibold tracking-[-0.05em] ${variant.title}`}>
+                  {item.title}
+                </h3>
+                <p className={`mx-auto mt-6 max-w-xs text-base leading-8 md:text-lg ${variant.desc}`}>
+                  {item.desc}
+                </p>
+              </article>
+            )})}
           </div>
         </div>
       </section>

@@ -1,51 +1,46 @@
 import Layout from "@/components/Layout";
 import { Instagram } from "lucide-react";
 
+const galleryVariants = [
+  "editorial-card surface-seafoam",
+  "editorial-card surface-sunset",
+  "editorial-card",
+  "editorial-card surface-sunset",
+  "editorial-card surface-seafoam",
+  "editorial-card-dark surface-ocean",
+];
+
 const Gallery = () => {
   return (
     <Layout>
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h1 className="subpage-title-kretowiny text-4xl md:text-5xl font-extrabold text-center mb-6">
-            Galeria 📸
-          </h1>
-          <p className="text-center text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
-            Zobacz nasze najlepsze chwile na wodzie! Śledź nas na Instagramie po więcej.
-          </p>
-
-          {/* Instagram embed grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {/* Instagram post embeds - using placeholder iframes */}
-            {[
-              "C_example1",
-              "C_example2",
-              "C_example3",
-              "C_example4",
-              "C_example5",
-              "C_example6",
-            ].map((_, i) => (
-              <div
-                key={i}
-                className="aspect-square bg-card rounded-xl border border-border flex items-center justify-center text-muted-foreground"
+      <section className="px-4 pb-16 pt-32 md:pt-40">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {["01", "02", "03", "04", "05", "06"].map((item, index) => (
+              <article
+                key={item}
+                className={`${galleryVariants[index]} flex aspect-square flex-col items-center justify-center p-7 text-center`}
               >
-                <div className="text-center p-4">
-                  <Instagram size={32} className="mx-auto mb-2 opacity-40" />
-                  <p className="text-xs opacity-60">Post z Instagrama #{i + 1}</p>
-                  <p className="text-xs opacity-40 mt-1">Embed zostanie dodany</p>
-                </div>
-              </div>
+                <Instagram size={34} className={index === 5 ? "text-white/82" : "text-foreground/38"} />
+                <p className={`mt-4 text-xs font-semibold uppercase tracking-[0.28em] ${index === 5 ? "text-white/58" : "text-foreground/42"}`}>
+                  Post {item}
+                </p>
+              </article>
             ))}
           </div>
 
-          {/* CTA to Instagram */}
-          <div className="text-center">
+          <div className="mt-10 flex justify-center">
             <a
               href="https://www.instagram.com/deskorelax/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white font-semibold px-8 py-3 rounded-full hover:scale-105 transition-transform shadow-lg"
+              className="inline-flex min-h-20 w-full max-w-[500px] items-center justify-center gap-4 rounded-full border border-[rgba(255,255,255,0.16)] bg-[#384958] px-8 py-5 text-center font-heading text-2xl font-semibold tracking-[-0.03em] text-white shadow-[0_18px_50px_rgba(14,26,37,0.32)] transition-transform duration-300 hover:-translate-y-0.5 hover:bg-[#415465]"
+              style={{ backgroundColor: "#384958", color: "#ffffff" }}
             >
-              <Instagram size={20} /> Zobacz więcej na Instagramie
+              <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[rgba(255,255,255,0.14)] bg-[rgba(255,255,255,0.04)]">
+                <Instagram size={24} />
+              </span>
+              <span>Zobacz więcej na Instagramie</span>
             </a>
           </div>
         </div>

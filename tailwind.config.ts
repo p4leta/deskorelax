@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["Outfit", "sans-serif"],
-        body: ["Quicksand", "sans-serif"],
+        heading: ["Bricolage Grotesque", "sans-serif"],
+        body: ["Manrope", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -59,6 +59,12 @@ export default {
           light: "hsl(var(--ocean-light))",
           DEFAULT: "hsl(var(--ocean))",
           dark: "hsl(var(--ocean-dark))",
+        },
+        ink: "hsl(var(--ink))",
+        foam: "hsl(var(--foam))",
+        sunset: {
+          DEFAULT: "hsl(var(--sunset))",
+          soft: "hsl(var(--sunset-soft))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

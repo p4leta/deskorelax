@@ -1,5 +1,7 @@
 import Layout from "@/components/Layout";
-import { MapPin } from "lucide-react";
+import PageHero from "@/components/PageHero";
+import { Navigation } from "lucide-react";
+import spotHeroMap from "@/assets/spot-hero-map.jpg";
 
 const googleMapsLink = "https://maps.app.goo.gl/5q5J3zmwxKsyaU7N6";
 const googleMapsEmbed = "https://www.google.com/maps?q=Deskorelax%20Kretowiny&output=embed";
@@ -7,57 +9,80 @@ const googleMapsEmbed = "https://www.google.com/maps?q=Deskorelax%20Kretowiny&ou
 const Spot = () => {
   return (
     <Layout>
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h1 className="subpage-title-kretowiny text-4xl md:text-5xl font-extrabold text-center mb-6">
-            Nasz Spot 📍
-          </h1>
-          <p className="text-center text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
-            Idealne miejsce do nauki i zabawy na wodzie.
-          </p>
-
-          <div className="bg-card rounded-xl border border-border p-8 md:p-12 mb-8">
-            <h2 className="font-heading text-2xl font-bold mb-4 flex items-center gap-2">
-              <MapPin size={24} className="text-secondary" /> Lokalizacja
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              Nasz spot to doskonałe miejsce zarówno dla początkujących, jak i zaawansowanych windsurferów.
-              Płytka woda, stabilny wiatr i piaszczyste dno tworzą idealne warunki do nauki i rozwijania umiejętności.
-            </p>
-
-            <div className="overflow-hidden rounded-xl border border-border shadow-lg bg-white/20">
-              <iframe
-                title="Mapa Google Deskorelax"
-                src={googleMapsEmbed}
-                className="w-full h-64 md:h-80"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+      <PageHero
+        eyebrow="Nasz spot"
+        title="Idealne miejsce do nauki i zabawy na wodzie"
+        description="Płytka woda, stabilny wiatr i przestrzeń, która pracuje zarówno dla pierwszych prób, jak i regularnego pływania."
+        panelClassName="surface-seafoam"
+        reverseOnDesktop
+        contentClassName="self-start pt-2 md:pt-0 lg:pt-2"
+        asideClassName="w-full lg:w-[32rem] xl:w-[36rem]"
+        aside={
+          <div className="editorial-card surface-ocean p-2 md:p-3">
+            <div className="media-frame min-h-[360px] w-full overflow-hidden rounded-[1.55rem]">
+              <img
+                src={spotHeroMap}
+                alt="Mapa spotu Deskorelax"
+                className="h-full min-h-[360px] w-full object-cover"
               />
             </div>
+          </div>
+        }
+      />
 
-            <div className="mt-4">
-              <a
-                href={googleMapsLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-white/20 px-5 py-3 text-sm font-semibold text-card-foreground transition-colors hover:bg-white/30"
-              >
-                <MapPin size={16} /> Otwórz w Google Maps
-              </a>
+      <section className="px-4 py-4 md:pb-16">
+        <div className="container mx-auto grid gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(360px,0.96fr)]">
+          <div className="section-shell surface-sunset p-4 md:p-6">
+            <div className="flex flex-col gap-5 p-4 md:p-5">
+              <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-foreground/42">Google Maps</p>
+                  <h2 className="mt-3 font-heading text-3xl font-semibold tracking-[-0.05em] text-foreground">
+                    Zobacz dokładnie, gdzie jesteśmy.
+                  </h2>
+                </div>
+                <a
+                  href={googleMapsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cta-secondary"
+                >
+                  <Navigation size={18} />
+                  Otwórz w Google Maps
+                </a>
+              </div>
+
+              <div className="media-frame overflow-hidden">
+                <iframe
+                  title="Mapa Google Deskorelax"
+                  src={googleMapsEmbed}
+                  className="h-72 w-full bg-white md:h-[28rem]"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
             </div>
           </div>
 
-          <div className="mt-8 bg-card rounded-xl border border-border p-4 md:p-6">
-            <h3 className="font-heading text-xl font-semibold mb-4 text-center">Warunki wiatrowe (Windy)</h3>
-            <div className="overflow-hidden rounded-xl border border-border bg-white/20">
-              <iframe
-                width="650"
-                height="450"
-                src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=%C2%B0C&metricWind=kt&zoom=11&overlay=wind&product=ecmwf&level=surface&lat=53.872&lon=20.023&detailLat=53.908&detailLon=20.024&detail=true"
-                frameBorder="0"
-                className="w-full"
-                title="Windy - warunki wiatrowe"
-              />
+          <div className="section-shell-dark surface-ocean p-4 md:p-6">
+            <div className="space-y-5 p-4 md:p-5">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/45">Windy</p>
+                <h2 className="mt-3 font-heading text-3xl font-semibold tracking-[-0.05em] text-white">
+                  Warunki wiatrowe pod ręką.
+                </h2>
+              </div>
+
+              <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5">
+                <iframe
+                  width="650"
+                  height="450"
+                  src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=%C2%B0C&metricWind=kt&zoom=11&overlay=wind&product=ecmwf&level=surface&lat=53.872&lon=20.023&detailLat=53.908&detailLon=20.024&detail=true"
+                  frameBorder="0"
+                  className="h-[28rem] w-full"
+                  title="Windy - warunki wiatrowe"
+                />
+              </div>
             </div>
           </div>
         </div>
