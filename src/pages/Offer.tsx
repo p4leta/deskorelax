@@ -34,7 +34,7 @@ const offerCardVariants: Record<
     arrow: "border border-white/15 bg-white/10 text-white",
   },
   obozy: {
-    card: "editorial-card-dark surface-ocean ring-1 ring-[rgba(255,168,126,0.12)]",
+    card: "editorial-card-dark surface-ocean ring-1 ring-white/10",
     icon: "icon-badge-ocean",
     eyebrow: "text-white/45",
     title: "text-white",

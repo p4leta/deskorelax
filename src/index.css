@@ -15,16 +15,16 @@
     --popover: 42 42% 97%;
     --popover-foreground: 217 41% 14%;
 
-    --primary: 202 79% 39%;
+    --primary: 207 69% 41%;
     --primary-foreground: 45 71% 97%;
 
-    --secondary: 191 43% 88%;
+    --secondary: 42 30% 94%;
     --secondary-foreground: 214 47% 18%;
 
     --muted: 38 34% 89%;
     --muted-foreground: 214 19% 37%;
 
-    --accent: 17 85% 61%;
+    --accent: 207 69% 41%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 76% 56%;
@@ -32,31 +32,31 @@
 
     --border: 203 28% 80%;
     --input: 203 28% 80%;
-    --ring: 202 79% 39%;
+    --ring: 207 69% 41%;
 
     --radius: 1.5rem;
 
     --sand: 42 42% 95%;
     --sand-dark: 38 30% 82%;
-    --ocean-light: 194 59% 80%;
-    --ocean: 202 79% 39%;
-    --ocean-dark: 214 47% 18%;
+    --ocean-light: 207 69% 41%;
+    --ocean: 207 69% 41%;
+    --ocean-dark: 207 69% 41%;
     --ink: 217 41% 14%;
     --foam: 191 56% 94%;
-    --sunset: 28 88% 62%;
-    --sunset-soft: 31 92% 79%;
-    --surface-seafoam: 179 41% 91%;
-    --surface-seafoam-strong: 181 48% 82%;
-    --surface-sunset: 31 100% 94%;
-    --surface-sunset-strong: 28 88% 82%;
-    --surface-ocean: 209 42% 22%;
-    --surface-ocean-soft: 198 38% 30%;
+    --sunset: 207 69% 41%;
+    --sunset-soft: 207 69% 41%;
+    --surface-seafoam: 0 0% 100%;
+    --surface-seafoam-strong: 0 0% 100%;
+    --surface-sunset: 42 36% 97%;
+    --surface-sunset-strong: 42 36% 97%;
+    --surface-ocean: 207 69% 41%;
+    --surface-ocean-soft: 207 69% 41%;
 
     --sidebar-background: 42 42% 97%;
     --sidebar-foreground: 217 41% 14%;
-    --sidebar-primary: 202 79% 39%;
+    --sidebar-primary: 207 69% 41%;
     --sidebar-primary-foreground: 45 71% 97%;
-    --sidebar-accent: 17 85% 61%;
+    --sidebar-accent: 207 69% 41%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 203 28% 80%;
     --sidebar-ring: 202 79% 39%;
@@ -73,9 +73,8 @@
   body {
     @apply bg-background text-foreground font-body antialiased;
     background-image:
-      radial-gradient(circle at top left, rgba(255, 184, 108, 0.22), transparent 30%),
-      radial-gradient(circle at 82% 14%, rgba(68, 174, 226, 0.22), transparent 26%),
-      radial-gradient(circle at 88% 70%, rgba(252, 147, 108, 0.12), transparent 20%),
+      radial-gradient(circle at top left, rgba(32, 110, 175, 0.08), transparent 30%),
+      radial-gradient(circle at 82% 14%, rgba(32, 110, 175, 0.07), transparent 26%),
       linear-gradient(180deg, rgba(249, 246, 240, 1) 0%, rgba(243, 238, 229, 1) 100%);
     min-height: 100vh;
   }
@@ -90,7 +89,7 @@
   }
 
   ::selection {
-    background: rgba(54, 155, 209, 0.22);
+    background: rgba(32, 110, 175, 0.22);
     color: hsl(var(--foreground));
   }
 }
@@ -106,10 +105,9 @@
     inset: 0;
     z-index: -2;
     background:
-      radial-gradient(circle at 12% 16%, rgba(255, 173, 132, 0.18), transparent 24%),
-      radial-gradient(circle at 88% 14%, rgba(110, 210, 213, 0.18), transparent 22%),
-      radial-gradient(circle at 78% 76%, rgba(255, 153, 116, 0.14), transparent 20%),
-      linear-gradient(125deg, rgba(255, 246, 233, 0.95) 0%, rgba(238, 246, 246, 0.84) 52%, rgba(228, 239, 248, 0.9) 100%);
+      radial-gradient(circle at 12% 16%, rgba(32, 110, 175, 0.1), transparent 24%),
+      radial-gradient(circle at 88% 14%, rgba(32, 110, 175, 0.08), transparent 22%),
+      linear-gradient(125deg, rgba(255, 246, 233, 0.95) 0%, rgba(246, 244, 240, 0.9) 52%, rgba(240, 243, 247, 0.9) 100%);
   }
 
   .site-shell::after {
@@ -136,8 +134,8 @@
     inset: 0;
     pointer-events: none;
     background:
-      radial-gradient(circle at top right, rgba(255, 183, 105, 0.18), transparent 28%),
-      radial-gradient(circle at bottom left, rgba(54, 155, 209, 0.16), transparent 32%);
+      radial-gradient(circle at top right, rgba(32, 110, 175, 0.08), transparent 28%),
+      radial-gradient(circle at bottom left, rgba(32, 110, 175, 0.08), transparent 32%);
   }
 
   .section-shell {
@@ -147,9 +145,9 @@
   .section-shell-dark {
     @apply relative rounded-[2rem] border border-white/10 bg-[rgba(14,31,45,0.9)] text-white shadow-[0_34px_90px_rgba(6,18,30,0.42)];
     background-image:
-      radial-gradient(circle at top right, rgba(255, 167, 126, 0.12), transparent 24%),
-      radial-gradient(circle at bottom left, rgba(94, 211, 207, 0.14), transparent 24%),
-      linear-gradient(180deg, rgba(15, 32, 46, 0.96) 0%, rgba(18, 42, 59, 0.92) 100%);
+      radial-gradient(circle at top right, rgba(255, 255, 255, 0.06), transparent 24%),
+      radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.05), transparent 24%),
+      linear-gradient(180deg, rgba(32, 110, 175, 0.96) 0%, rgba(27, 94, 151, 0.92) 100%);
   }
 
   .section-shell-dark p,
@@ -162,7 +160,7 @@
   }
 
   .editorial-card-dark {
-    @apply relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[linear-gradient(180deg,rgba(16,34,48,0.96)_0%,rgba(22,47,66,0.88)_100%)] text-white shadow-[0_24px_56px_rgba(6,18,30,0.34)];
+    @apply relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[linear-gradient(180deg,rgba(32,110,175,0.96)_0%,rgba(27,94,151,0.9)_100%)] text-white shadow-[0_24px_56px_rgba(6,18,30,0.34)];
   }
 
   .editorial-card::after,
@@ -173,39 +171,39 @@
     width: 18rem;
     height: 18rem;
     border-radius: 9999px;
-    background: radial-gradient(circle, rgba(54, 155, 209, 0.16) 0%, rgba(255, 160, 113, 0.1) 38%, transparent 72%);
+    background: radial-gradient(circle, rgba(32, 110, 175, 0.12) 0%, transparent 72%);
     pointer-events: none;
   }
 
   .surface-seafoam {
-    border-color: rgba(136, 206, 199, 0.45);
+    border-color: rgba(32, 110, 175, 0.12);
     background-image:
-      radial-gradient(circle at top right, rgba(94, 211, 207, 0.16), transparent 26%),
-      linear-gradient(180deg, rgba(233, 249, 246, 0.96) 0%, rgba(218, 241, 238, 0.88) 100%);
+      radial-gradient(circle at top right, rgba(32, 110, 175, 0.05), transparent 26%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(247, 248, 250, 0.88) 100%);
   }
 
   .surface-seafoam::after {
-    background: radial-gradient(circle, rgba(69, 192, 186, 0.2) 0%, transparent 72%);
+    background: radial-gradient(circle, rgba(32, 110, 175, 0.08) 0%, transparent 72%);
   }
 
   .surface-sunset {
-    border-color: rgba(243, 185, 133, 0.52);
+    border-color: rgba(32, 110, 175, 0.12);
     background-image:
-      radial-gradient(circle at top left, rgba(255, 196, 136, 0.18), transparent 24%),
-      linear-gradient(180deg, rgba(255, 248, 239, 0.96) 0%, rgba(255, 232, 209, 0.9) 100%);
+      radial-gradient(circle at top left, rgba(32, 110, 175, 0.04), transparent 24%),
+      linear-gradient(180deg, rgba(255, 252, 247, 0.96) 0%, rgba(249, 247, 242, 0.9) 100%);
   }
 
   .surface-sunset::after {
-    background: radial-gradient(circle, rgba(241, 154, 83, 0.18) 0%, transparent 72%);
+    background: radial-gradient(circle, rgba(32, 110, 175, 0.07) 0%, transparent 72%);
   }
 
   .surface-ocean {
-    border-color: rgba(170, 224, 231, 0.12);
+    border-color: rgba(255, 255, 255, 0.14);
     color: rgba(248, 250, 252, 0.95);
     background-image:
-      radial-gradient(circle at top right, rgba(255, 175, 132, 0.14), transparent 22%),
-      radial-gradient(circle at bottom left, rgba(94, 211, 207, 0.16), transparent 24%),
-      linear-gradient(180deg, rgba(17, 39, 56, 0.96) 0%, rgba(22, 53, 74, 0.9) 100%);
+      radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 22%),
+      radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.06), transparent 24%),
+      linear-gradient(180deg, rgba(32, 110, 175, 0.96) 0%, rgba(27, 94, 151, 0.9) 100%);
   }
 
   .surface-ocean p,
@@ -214,34 +212,34 @@
   }
 
   .surface-ocean::after {
-    background: radial-gradient(circle, rgba(94, 211, 207, 0.2) 0%, rgba(255, 167, 126, 0.12) 34%, transparent 74%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 74%);
   }
 
   .surface-wash {
-    border-color: rgba(164, 217, 213, 0.48);
+    border-color: rgba(32, 110, 175, 0.14);
     background-image:
-      radial-gradient(circle at top left, rgba(255, 171, 126, 0.18), transparent 22%),
-      radial-gradient(circle at bottom right, rgba(94, 211, 207, 0.18), transparent 22%),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(241, 247, 246, 0.9) 100%);
+      radial-gradient(circle at top left, rgba(32, 110, 175, 0.05), transparent 22%),
+      radial-gradient(circle at bottom right, rgba(32, 110, 175, 0.04), transparent 22%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 247, 249, 0.9) 100%);
   }
 
   .icon-badge-seafoam {
     @apply inline-flex items-center justify-center rounded-full;
-    background: linear-gradient(180deg, rgba(220, 244, 241, 0.95) 0%, rgba(197, 233, 228, 0.92) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(244, 247, 250, 0.92) 100%);
     color: hsl(var(--primary));
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
   }
 
   .icon-badge-sunset {
     @apply inline-flex items-center justify-center rounded-full;
-    background: linear-gradient(180deg, rgba(255, 242, 226, 0.96) 0%, rgba(255, 217, 182, 0.92) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(247, 248, 250, 0.92) 100%);
     color: hsl(var(--accent));
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
   }
 
   .icon-badge-ocean {
     @apply inline-flex items-center justify-center rounded-full text-white;
-    background: linear-gradient(180deg, rgba(27, 71, 97, 0.96) 0%, rgba(21, 48, 69, 0.94) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.12) 100%);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
@@ -274,16 +272,16 @@
 
   .cta-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-full border border-primary/20 bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_14px_32px_rgba(20,109,158,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
-    background-image: linear-gradient(135deg, rgba(31, 124, 183, 1) 0%, rgba(47, 150, 208, 1) 100%);
+    background-image: linear-gradient(135deg, rgba(32, 110, 175, 1) 0%, rgba(32, 110, 175, 1) 100%);
     box-shadow:
       0 14px 32px rgba(20, 109, 158, 0.28),
-      0 10px 28px rgba(255, 146, 106, 0.12);
+      0 10px 28px rgba(32, 110, 175, 0.12);
   }
 
   .cta-primary:hover {
     box-shadow:
       0 18px 38px rgba(20, 109, 158, 0.32),
-      0 14px 36px rgba(255, 146, 106, 0.18);
+      0 14px 36px rgba(32, 110, 175, 0.18);
   }
 
   .cta-secondary {
@@ -296,7 +294,7 @@
   .cta-secondary:hover {
     box-shadow:
       0 14px 26px rgba(15, 32, 46, 0.1),
-      0 8px 24px rgba(255, 170, 128, 0.12);
+      0 8px 24px rgba(32, 110, 175, 0.12);
   }
 
   .cta-inverse {
@@ -306,7 +304,7 @@
   .cta-inverse:hover {
     box-shadow:
       0 16px 32px rgba(4, 18, 28, 0.24),
-      0 10px 28px rgba(255, 150, 110, 0.12);
+      0 10px 28px rgba(32, 110, 175, 0.12);
   }
 
   .kicker-line {

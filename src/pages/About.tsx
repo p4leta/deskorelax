@@ -21,27 +21,6 @@ const values = [
   },
 ];
 
-const valueVariants = [
-  {
-    card: "editorial-card surface-seafoam",
-    icon: "icon-badge-seafoam text-primary",
-    title: "text-foreground",
-    desc: "text-muted-foreground",
-  },
-  {
-    card: "editorial-card surface-sunset",
-    icon: "icon-badge-sunset",
-    title: "text-foreground",
-    desc: "text-muted-foreground",
-  },
-  {
-    card: "editorial-card-dark surface-ocean",
-    icon: "icon-badge-ocean",
-    title: "text-white",
-    desc: "text-white/74",
-  },
-];
-
 const About = () => {
   return (
     <Layout>
@@ -56,7 +35,7 @@ Do dziś Deskorelax to przede wszystkim ludzie, klimat i wspólna zajawka.`}
         className="pb-6 md:pb-8"
         panelClassName="surface-seafoam"
         descriptionClassName="max-w-3xl whitespace-pre-line"
-        contentClassName="lg:max-w-[44rem]"
+        contentClassName="lg:max-w-[44rem] lg:self-start"
         asideClassName="w-full lg:w-[32rem] xl:w-[36rem]"
         aside={
           <div className="editorial-card surface-sunset p-2 md:p-3">
@@ -74,18 +53,16 @@ Do dziś Deskorelax to przede wszystkim ludzie, klimat i wspólna zajawka.`}
       <section className="px-4 py-4 md:pb-16">
         <div className="container mx-auto">
           <div className="grid gap-6 md:grid-cols-3">
-            {values.map((item, index) => {
-              const variant = valueVariants[index];
-
+            {values.map((item) => {
               return (
-              <article key={item.title} className={`${variant.card} p-8 text-center md:p-10`}>
-                <div className={`mx-auto mb-6 h-20 w-20 ${variant.icon}`}>
+              <article key={item.title} className="editorial-card-dark surface-ocean p-8 text-center md:p-10">
+                <div className="icon-badge-ocean mx-auto mb-6 h-20 w-20">
                   {item.icon}
                 </div>
-                <h3 className={`font-heading text-3xl font-semibold tracking-[-0.05em] ${variant.title}`}>
+                <h3 className="font-heading text-3xl font-semibold tracking-[-0.05em] text-white">
                   {item.title}
                 </h3>
-                <p className={`mx-auto mt-6 max-w-xs text-base leading-8 md:text-lg ${variant.desc}`}>
+                <p className="mx-auto mt-6 max-w-xs text-base leading-8 text-white/74 md:text-lg">
                   {item.desc}
                 </p>
               </article>

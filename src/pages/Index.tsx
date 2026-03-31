@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Instagram, Sun, Waves, Wind } from "lucide-react";
 import Layout from "@/components/Layout";
-import heroDeskorelaxSunset from "@/assets/hero-deskorelax-sunset.jpg";
+import heroDeskorelaxSunset from "@/assets/hero-home-new.jpg";
 import heroSailingCard from "@/assets/hero-sailing-card.jpg";
 
 const features = [
@@ -24,22 +24,22 @@ const features = [
 
 const featureVariants = [
   {
-    card: "editorial-card surface-seafoam",
-    icon: "icon-badge-seafoam text-primary",
-    title: "text-foreground",
-    desc: "text-muted-foreground",
-  },
-  {
-    card: "editorial-card surface-sunset",
-    icon: "icon-badge-sunset",
-    title: "text-foreground",
-    desc: "text-muted-foreground",
+    card: "editorial-card-dark surface-ocean",
+    icon: "icon-badge-ocean",
+    title: "text-white",
+    desc: "text-white/78",
   },
   {
     card: "editorial-card-dark surface-ocean",
     icon: "icon-badge-ocean",
     title: "text-white",
-    desc: "text-white/74",
+    desc: "text-white/78",
+  },
+  {
+    card: "editorial-card-dark surface-ocean",
+    icon: "icon-badge-ocean",
+    title: "text-white",
+    desc: "text-white/78",
   },
 ];
 
@@ -61,34 +61,6 @@ const entryPoints = [
   },
 ];
 
-const entryPointVariants = [
-  {
-    card: "editorial-card-dark surface-ocean",
-    eyebrow: "text-white/45",
-    title: "text-white",
-    desc: "text-white/72",
-    arrow: "border border-white/15 bg-white/10 text-white",
-  },
-  {
-    card: "editorial-card surface-seafoam",
-    eyebrow: "",
-    eyebrowStyle: { color: "rgba(19, 34, 53, 0.64)" },
-    title: "!text-foreground",
-    desc: "",
-    descStyle: { color: "rgba(19, 34, 53, 0.82)" },
-    arrow: "border border-primary/12 bg-white/70 text-foreground",
-  },
-  {
-    card: "editorial-card surface-sunset",
-    eyebrow: "",
-    eyebrowStyle: { color: "rgba(19, 34, 53, 0.64)" },
-    title: "!text-foreground",
-    desc: "",
-    descStyle: { color: "rgba(19, 34, 53, 0.82)" },
-    arrow: "border border-accent/18 bg-white/60 text-foreground",
-  },
-];
-
 const Index = () => {
   return (
     <Layout>
@@ -100,7 +72,7 @@ const Index = () => {
               alt="Deskorelax przy jeziorze o zachodzie słońca"
               className="absolute inset-0 h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,186,142,0.24),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(86,206,209,0.24),transparent_26%),linear-gradient(180deg,rgba(15,18,28,0.22)_0%,rgba(15,18,28,0.42)_100%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,28,42,0.18)_0%,rgba(12,28,42,0.42)_100%)]" />
             <div className="ambient-blob right-12 top-10 h-36 w-36 bg-sunset/25" />
             <div className="ambient-blob bottom-10 left-10 h-44 w-44 bg-ocean-light/25" />
 
@@ -140,12 +112,14 @@ const Index = () => {
               const variant = featureVariants[index];
 
               return (
-              <article key={item.title} className={`${variant.card} p-6`}>
-                <div className={`mb-5 h-14 w-14 ${variant.icon}`}>
+              <article key={item.title} className={`${variant.card} min-h-[320px] p-8 md:p-10`}>
+                <div className={`mb-10 h-20 w-20 ${variant.icon}`}>
                   {item.icon}
                 </div>
-                <h3 className={`font-heading text-2xl font-semibold tracking-[-0.04em] ${variant.title}`}>{item.title}</h3>
-                <p className={`mt-3 text-sm leading-7 ${variant.desc}`}>{item.desc}</p>
+                <h3 className={`font-heading text-3xl font-semibold tracking-[-0.05em] ${variant.title}`}>
+                  {item.title}
+                </h3>
+                <p className={`mt-8 max-w-md text-base leading-8 md:text-lg ${variant.desc}`}>{item.desc}</p>
               </article>
             )})}
           </div>
@@ -167,33 +141,22 @@ const Index = () => {
               </div>
 
               <div className="grid gap-4">
-                {entryPoints.map((item, index) => {
-                  const variant = entryPointVariants[index];
-
+                {entryPoints.map((item) => {
                   return (
                   <Link
                     key={item.title}
                     to={item.href}
-                    className={`${variant.card} group flex items-start justify-between gap-4 p-6`}
+                    className="editorial-card surface-seafoam group flex items-start justify-between gap-4 p-6"
                   >
                     <div>
-                      <p
-                        className={`text-xs font-semibold uppercase tracking-[0.24em] ${variant.eyebrow}`}
-                        style={variant.eyebrowStyle}
-                      >
-                        Explore
-                      </p>
-                      <h3 className={`mt-3 font-heading text-2xl font-semibold tracking-[-0.04em] ${variant.title}`}>
+                      <h3 className="font-heading text-2xl font-semibold tracking-[-0.04em] text-foreground">
                         {item.title}
                       </h3>
-                      <p
-                        className={`mt-3 max-w-lg text-sm leading-7 ${variant.desc}`}
-                        style={variant.descStyle}
-                      >
+                      <p className="mt-3 max-w-lg text-sm leading-7 !text-foreground">
                         {item.description}
                       </p>
                     </div>
-                    <span className={`mt-1 inline-flex h-11 w-11 items-center justify-center rounded-full transition-transform duration-300 group-hover:translate-x-1 ${variant.arrow}`}>
+                    <span className="mt-1 inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/12 bg-white/70 text-foreground transition-transform duration-300 group-hover:translate-x-1">
                       <ArrowRight size={18} />
                     </span>
                   </Link>
@@ -207,8 +170,7 @@ const Index = () => {
       <section className="px-4 py-8 md:py-12 md:pb-16">
         <div className="container mx-auto">
           <div className="editorial-card surface-wash p-8 md:p-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-foreground/42">Ready when you are</p>
-            <h2 className="mt-5 max-w-4xl font-heading text-3xl font-semibold tracking-[-0.05em] text-foreground md:text-5xl">
+            <h2 className="max-w-4xl font-heading text-3xl font-semibold tracking-[-0.05em] text-foreground md:text-5xl">
               Gotowy na swoją pierwszą albo kolejną sesję?
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-muted-foreground md:text-base">

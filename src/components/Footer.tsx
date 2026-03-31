@@ -61,11 +61,11 @@ const Footer = () => {
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/45">Kontakt</p>
               <div className="space-y-4 text-sm text-white/76">
                 <div className="flex items-start gap-3">
-                  <Phone size={16} className="mt-0.5 text-sunset-soft" />
+                  <Phone size={16} className="mt-0.5 text-white/78" />
                   <span>+48 696 246 459</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Mail size={16} className="mt-0.5 text-sunset-soft" />
+                  <Mail size={16} className="mt-0.5 text-white/78" />
                   <span>deskorelaxkretowiny@gmail.com</span>
                 </div>
                 <a
@@ -74,7 +74,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 hover:text-white"
                 >
-                  <MapPin size={16} className="mt-0.5 text-sunset-soft" />
+                  <MapPin size={16} className="mt-0.5 text-white/78" />
                   <span>Kretowiny 28F, 14-300 Kretowiny</span>
                 </a>
                 <a
@@ -83,7 +83,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 hover:text-white"
                 >
-                  <Instagram size={16} className="text-sunset-soft" />
+                  <Instagram size={16} className="text-white/78" />
                   <span>@deskorelax</span>
                 </a>
               </div>

@@ -23,7 +23,7 @@ const Navbar = () => {
         <nav className="section-shell px-4 py-3 md:px-6">
           <div className="flex items-center justify-between gap-4">
             <Link to="/" className="flex items-center gap-4" onClick={() => setIsOpen(false)}>
-              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[linear-gradient(145deg,rgba(255,247,233,0.95)_0%,rgba(226,242,248,0.92)_100%)] shadow-[0_10px_30px_rgba(15,32,46,0.14)]">
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-[0_10px_30px_rgba(15,32,46,0.14)]">
                 <img
                   alt="Deskorelax logo"
                   className="h-12 w-12 object-contain"
