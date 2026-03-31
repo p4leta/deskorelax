@@ -1,3 +1,6 @@
+import aboutHeroWindsurf from "@/assets/about-hero-windsurf.jpg";
+import spotHeroMap from "@/assets/spot-hero-map.jpg";
+
 type RouteModuleLoader = () => Promise<unknown>;
 
 type PrefetchableRoute =
@@ -20,6 +23,12 @@ const routeModuleLoaders: Record<PrefetchableRoute, RouteModuleLoader> = {
 };
 
 const prefetchedRoutes = new Set<PrefetchableRoute>();
+const prefetchedAssets = new Set<string>();
+
+const routeCriticalAssets: Partial<Record<PrefetchableRoute, string[]>> = {
+  "/o-nas": [aboutHeroWindsurf],
+  "/spot": [spotHeroMap],
+};
 
 export const routeLoaders = routeModuleLoaders;
 
@@ -44,6 +53,27 @@ export const prefetchRoute = (path: string) => {
   });
 };
 
+export const preloadAsset = (assetUrl: string) => {
+  if (!assetUrl || prefetchedAssets.has(assetUrl)) {
+    return;
+  }
+
+  const image = new Image();
+  image.decoding = "async";
+  image.src = assetUrl;
+  prefetchedAssets.add(assetUrl);
+};
+
+export const preloadCriticalAssetsForRoute = (path: string) => {
+  const route = getPrefetchableRoute(path);
+
+  if (!route) {
+    return;
+  }
+
+  (routeCriticalAssets[route] ?? []).forEach((assetUrl) => preloadAsset(assetUrl));
+};
+
 export const scheduleIdleRoutePrefetch = (paths: string[]) => {
   const runPrefetch = () => {
     paths.forEach((path) => prefetchRoute(path));
@@ -65,5 +95,59 @@ export const scheduleIdleRoutePrefetch = (paths: string[]) => {
 
   return () => {
     window.clearTimeout(timeoutId);
+  };
+};
+
+const runAfterIdle = (callback: () => void) => {
+  if (typeof window === "undefined") {
+    return () => undefined;
+  }
+
+  if ("requestIdleCallback" in window) {
+    const idleId = window.requestIdleCallback(callback, { timeout: 2400 });
+
+    return () => {
+      window.cancelIdleCallback(idleId);
+    };
+  }
+
+  const timeoutId = window.setTimeout(callback, 1200);
+
+  return () => {
+    window.clearTimeout(timeoutId);
+  };
+};
+
+const allPrefetchableRoutes: PrefetchableRoute[] = [
+  "/o-nas",
+  "/oferta",
+  "/spot",
+  "/galeria",
+  "/wyjazdy",
+  "/kontakt",
+  "*",
+];
+
+let appWarmupScheduled = false;
+
+export const scheduleFullAppWarmup = () => {
+  if (typeof window === "undefined" || appWarmupScheduled) {
+    return () => undefined;
+  }
+
+  appWarmupScheduled = true;
+  let clearAssetWarmup = () => undefined;
+
+  const clearRouteWarmup = runAfterIdle(() => {
+    Promise.all(allPrefetchableRoutes.map((route) => routeModuleLoaders[route]().catch(() => undefined))).finally(() => {
+      clearAssetWarmup = runAfterIdle(() => {
+        allPrefetchableRoutes.forEach((route) => preloadCriticalAssetsForRoute(route));
+      });
+    });
+  });
+
+  return () => {
+    clearRouteWarmup();
+    clearAssetWarmup();
   };
 };

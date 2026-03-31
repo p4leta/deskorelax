@@ -1,7 +1,7 @@
 import RouteLoadingFallback from "@/components/RouteLoadingFallback";
 import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { routeLoaders, scheduleIdleRoutePrefetch } from "@/lib/route-prefetch";
+import { routeLoaders, scheduleFullAppWarmup } from "@/lib/route-prefetch";
 import Index from "./pages/Index";
 const About = lazy(routeLoaders["/o-nas"]);
 const Offer = lazy(routeLoaders["/oferta"]);
@@ -29,7 +29,7 @@ const RoutePrefetchWarmup = () => {
       return;
     }
 
-    return scheduleIdleRoutePrefetch(["/oferta", "/o-nas", "/kontakt", "/spot"]);
+    return scheduleFullAppWarmup();
   }, [pathname]);
 
   return null;
