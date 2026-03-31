@@ -119,7 +119,7 @@ const Offer = () => {
       </section>
 
       {activeOffer ? (
-        <div className="fixed inset-0 z-[60] bg-[rgba(8,18,28,0.62)] backdrop-blur-xl" onClick={() => setActiveSlug(null)}>
+        <div className="fixed inset-0 z-[100] bg-[rgba(8,18,28,0.62)] backdrop-blur-xl" onClick={() => setActiveSlug(null)}>
           <div className="flex h-full items-start justify-center overflow-y-auto px-4 py-24 md:px-8">
             <div className="w-full max-w-[96rem]">
               <div className="mb-4 flex justify-end">

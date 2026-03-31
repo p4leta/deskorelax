@@ -11,7 +11,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       <div className="ambient-blob left-[18%] top-[28rem] h-[20rem] w-[20rem] bg-[rgba(255,150,94,0.24)]" />
       <div className="ambient-blob right-[12%] top-[34rem] h-[16rem] w-[16rem] bg-[rgba(255,118,163,0.18)]" />
       <Navbar />
-      <main className="relative z-10 flex-1">{children}</main>
+      <main className="relative flex-1">{children}</main>
       <Footer />
     </div>
   );
