@@ -39,7 +39,7 @@ const OfferPreviewModal = ({ offer, onClose }: OfferPreviewModalProps) => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="mx-auto flex w-full max-w-full flex-col gap-4 lg:max-w-[74rem] xl:max-w-[82rem]">
             {(offer.pdfPages ?? []).map((pageSrc, index) => (
               <img
                 key={pageSrc}
