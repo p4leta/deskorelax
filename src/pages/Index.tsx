@@ -64,7 +64,7 @@ const entryPoints = [
 const Index = () => {
   return (
     <Layout>
-      <section className="section-frame overflow-hidden px-2 pb-8 pt-3 md:px-4 md:pt-12 md:pb-20">
+      <section className="section-frame section-frame-seamless overflow-hidden px-2 pb-8 pt-3 md:px-4 md:pt-12 md:pb-20">
         <div className="container mx-auto">
           <div className="media-frame min-h-[420px] md:min-h-[640px]">
             <img
