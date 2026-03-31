@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import { Instagram } from "lucide-react";
+import InstagramBrandIcon from "@/components/InstagramBrandIcon";
 
 const galleryVariants = [
   "editorial-card surface-seafoam",
@@ -21,7 +21,7 @@ const Gallery = () => {
                 key={item}
                 className={`${galleryVariants[index]} flex aspect-square flex-col items-center justify-center p-5 text-center md:p-7`}
               >
-                <Instagram size={34} className={index === 5 ? "text-white/82" : "text-foreground/38"} />
+                <InstagramBrandIcon size={34} />
                 <p className={`mt-4 text-xs font-semibold uppercase tracking-[0.28em] ${index === 5 ? "text-white/58" : "text-foreground/42"}`}>
                   Post {item}
                 </p>
@@ -38,7 +38,7 @@ const Gallery = () => {
               style={{ backgroundColor: "#384958", color: "#ffffff" }}
             >
               <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(255,255,255,0.14)] bg-[rgba(255,255,255,0.04)] md:h-12 md:w-12">
-                <Instagram size={24} />
+                <InstagramBrandIcon size={24} />
               </span>
               <span>Zobacz więcej na Instagramie</span>
             </a>

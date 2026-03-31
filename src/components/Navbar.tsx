@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Instagram, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import InstagramBrandIcon from "@/components/InstagramBrandIcon";
 
 const navLinks = [
   { to: "/", label: "Strona główna" },
@@ -62,7 +63,7 @@ const Navbar = () => {
                 className="cta-secondary h-11 px-4"
                 aria-label="Instagram Deskorelax"
               >
-                <Instagram size={18} />
+                <InstagramBrandIcon size={18} />
               </a>
             </div>
 
@@ -101,7 +102,7 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   className="cta-secondary flex-1"
                 >
-                  <Instagram size={18} />
+                  <InstagramBrandIcon size={18} />
                   Instagram
                 </a>
               </div>

@@ -1,5 +1,6 @@
-import { Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import InstagramBrandIcon from "@/components/InstagramBrandIcon";
 
 const googleMapsLink = "https://maps.app.goo.gl/5q5J3zmwxKsyaU7N6";
 
@@ -83,7 +84,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 hover:text-white"
                 >
-                  <Instagram size={16} className="text-white/78" />
+                  <InstagramBrandIcon size={16} />
                   <span>@deskorelax</span>
                 </a>
               </div>

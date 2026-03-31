@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Instagram, Sun, Waves, Wind } from "lucide-react";
+import { ArrowRight, Sun, Waves, Wind } from "lucide-react";
 import Layout from "@/components/Layout";
+import InstagramBrandIcon from "@/components/InstagramBrandIcon";
 import heroDeskorelaxSunset from "@/assets/hero-home-new.jpg";
 import heroSailingCard from "@/assets/hero-sailing-card.jpg";
 
@@ -95,7 +96,7 @@ const Index = () => {
                     rel="noopener noreferrer"
                     className="cta-secondary"
                   >
-                    <Instagram size={18} />
+                    <InstagramBrandIcon size={18} />
                     Zobacz Instagram
                   </a>
                 </div>

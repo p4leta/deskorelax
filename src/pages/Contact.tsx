@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
-import { Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import InstagramBrandIcon from "@/components/InstagramBrandIcon";
 
 const googleMapsLink = "https://maps.app.goo.gl/5q5J3zmwxKsyaU7N6";
 
@@ -24,7 +25,7 @@ const contactItems = [
     href: googleMapsLink,
   },
   {
-    icon: <Instagram size={22} />,
+    icon: <InstagramBrandIcon size={22} />,
     title: "Instagram",
     content: "@deskorelax",
     href: "https://www.instagram.com/deskorelax/",
