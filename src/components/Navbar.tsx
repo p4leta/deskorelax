@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
 import InstagramBrandIcon from "@/components/InstagramBrandIcon";
+import PrefetchLink from "@/components/PrefetchLink";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   { to: "/", label: "Strona główna" },
@@ -23,7 +24,7 @@ const Navbar = () => {
       <div className="container mx-auto">
         <nav className="section-shell px-2 py-2 md:px-6 md:py-3">
           <div className="flex items-center justify-between gap-4">
-            <Link to="/" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
+            <PrefetchLink to="/" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-[0_10px_30px_rgba(15,32,46,0.14)] md:h-14 md:w-14">
                 <img
                   alt="Deskorelax logo"
@@ -39,20 +40,20 @@ const Navbar = () => {
                   Windsurfing & żeglarstwo
                 </p>
               </div>
-            </Link>
+            </PrefetchLink>
 
             <div className="hidden items-center gap-1 lg:flex">
               {navLinks.map((link) => {
                 const active = location.pathname === link.to;
 
                 return (
-                  <Link
+                  <PrefetchLink
                     key={link.to}
                     to={link.to}
                     className={cn("nav-pill", active && "nav-pill-active")}
                   >
                     {link.label}
-                  </Link>
+                  </PrefetchLink>
                 );
               })}
             </div>
@@ -86,14 +87,14 @@ const Navbar = () => {
                 const active = location.pathname === link.to;
 
                 return (
-                  <Link
+                  <PrefetchLink
                     key={link.to}
                     to={link.to}
                     onClick={() => setIsOpen(false)}
                     className={cn("nav-pill justify-between px-3.5 py-2.5", active && "nav-pill-active")}
                   >
                     {link.label}
-                  </Link>
+                  </PrefetchLink>
                 );
               })}
 

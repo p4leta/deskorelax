@@ -1,14 +1,15 @@
 import RouteLoadingFallback from "@/components/RouteLoadingFallback";
 import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { routeLoaders, scheduleIdleRoutePrefetch } from "@/lib/route-prefetch";
 import Index from "./pages/Index";
-const About = lazy(() => import("./pages/About"));
-const Offer = lazy(() => import("./pages/Offer"));
-const Spot = lazy(() => import("./pages/Spot"));
-const Gallery = lazy(() => import("./pages/Gallery"));
-const Contact = lazy(() => import("./pages/Contact"));
-const Trips = lazy(() => import("./pages/Trips"));
-const NotFound = lazy(() => import("./pages/NotFound"));
+const About = lazy(routeLoaders["/o-nas"]);
+const Offer = lazy(routeLoaders["/oferta"]);
+const Spot = lazy(routeLoaders["/spot"]);
+const Gallery = lazy(routeLoaders["/galeria"]);
+const Contact = lazy(routeLoaders["/kontakt"]);
+const Trips = lazy(routeLoaders["/wyjazdy"]);
+const NotFound = lazy(routeLoaders["*"]);
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -20,9 +21,24 @@ const ScrollToTop = () => {
   return null;
 };
 
+const RoutePrefetchWarmup = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (pathname !== "/") {
+      return;
+    }
+
+    return scheduleIdleRoutePrefetch(["/oferta", "/o-nas", "/kontakt", "/spot"]);
+  }, [pathname]);
+
+  return null;
+};
+
 const App = () => (
   <BrowserRouter>
     <ScrollToTop />
+    <RoutePrefetchWarmup />
     <Suspense fallback={<RouteLoadingFallback />}>
       <Routes>
         <Route path="/" element={<Index />} />

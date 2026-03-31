@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import { Wind } from "lucide-react";
 import InstagramBrandIcon from "@/components/InstagramBrandIcon";
+import PrefetchLink from "@/components/PrefetchLink";
 import homeHeroImage from "@/assets/hero-home-new.jpg";
 
 const HomeHeroSection = () => {
@@ -26,15 +26,16 @@ const HomeHeroSection = () => {
                 src="/hero/kretowiny-wordmark-full.png"
                 alt="Szkola windsurfingu i zeglarstwa Kretowiny"
                 loading="eager"
+                fetchPriority="high"
                 decoding="async"
                 className="h-auto w-full max-w-[46rem] drop-shadow-[0_16px_40px_rgba(13,27,39,0.34)]"
               />
 
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
-                <Link to="/oferta" className="cta-primary">
+                <PrefetchLink to="/oferta" className="cta-primary">
                   <Wind size={18} />
                   Sprawdź ofertę
-                </Link>
+                </PrefetchLink>
                 <a
                   href="https://www.instagram.com/deskorelax/"
                   target="_blank"

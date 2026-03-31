@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import PrefetchLink from "@/components/PrefetchLink";
 
 const HomeCtaSection = () => {
   return (
@@ -13,12 +13,12 @@ const HomeCtaSection = () => {
             napisz do nas.
           </p>
           <div className="mt-6 flex flex-col gap-2.5 sm:flex-row md:mt-8 md:gap-3">
-            <Link to="/kontakt" className="cta-primary">
+            <PrefetchLink to="/kontakt" className="cta-primary">
               Skontaktuj się z nami
-            </Link>
-            <Link to="/o-nas" className="cta-secondary">
+            </PrefetchLink>
+            <PrefetchLink to="/o-nas" className="cta-secondary">
               Poznaj nas lepiej
-            </Link>
+            </PrefetchLink>
           </div>
         </div>
       </div>

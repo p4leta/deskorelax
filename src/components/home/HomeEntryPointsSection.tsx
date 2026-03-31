@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import PrefetchLink from "@/components/PrefetchLink";
 import heroSailingCard from "@/assets/hero-sailing-card.jpg";
 import { homeEntryPoints } from "./homeContent";
 
@@ -24,7 +24,7 @@ const HomeEntryPointsSection = () => {
             <div className="grid gap-3 md:gap-4">
               {homeEntryPoints.map((item) => {
                 return (
-                  <Link
+                  <PrefetchLink
                     key={item.title}
                     to={item.href}
                     className="editorial-card surface-seafoam group flex items-start justify-between gap-2.5 p-3.5 md:gap-4 md:p-6"
@@ -40,7 +40,7 @@ const HomeEntryPointsSection = () => {
                     <span className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary/12 bg-white/70 text-foreground transition-transform duration-300 group-hover:translate-x-1 md:h-11 md:w-11">
                       <ArrowRight size={18} />
                     </span>
-                  </Link>
+                  </PrefetchLink>
                 );
               })}
             </div>
