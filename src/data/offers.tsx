@@ -24,7 +24,7 @@ export const offers: OfferItem[] = [
     panelTitle: "Kurs żeglarstwa 2026",
     panelLead:
       "Pełna ofertówka kursu żeglarstwa pokazana bezpośrednio w panelu strony, w układzie spójnym z resztą serwisu.",
-    pdfPages: ["/offer-pages/zeglarstwo-2026/page-1.png"],
+    pdfPages: ["/offer-pages/zeglarstwo-2026/page-1.jpg"],
     downloadPdfSrc: "/offer-pdfs/zeglarstwo-2026.pdf",
   },
   {
@@ -37,7 +37,7 @@ export const offers: OfferItem[] = [
     panelTitle: "Kurs windsurfingu 2026",
     panelLead:
       "Pełna ofertówka kursu windsurfingu pokazana bez przeglądarkowego viewer-a, jako integralna część strony.",
-    pdfPages: ["/offer-pages/windsurfing-2026/page-1.png"],
+    pdfPages: ["/offer-pages/windsurfing-2026/page-1.jpg"],
     downloadPdfSrc: "/offer-pdfs/windsurfing-2026.pdf",
   },
   {
@@ -50,7 +50,7 @@ export const offers: OfferItem[] = [
     panelTitle: "Deskorelax Camp 2026",
     panelLead:
       "Pełna ofertówka obozów w formie brandowanego podglądu stron, bez obcego paska narzędzi PDF.",
-    pdfPages: ["/offer-pages/obozy-2026/page-1.png"],
+    pdfPages: ["/offer-pages/obozy-2026/page-1.jpg"],
     downloadPdfSrc: "/offer-pdfs/obozy-2026.pdf",
   },
   {
@@ -63,7 +63,7 @@ export const offers: OfferItem[] = [
     panelTitle: "Obozy kid",
     panelLead:
       "Pełna ofertówka obozów kid w spójnym, natywnym podglądzie wpisanym w wizualny język strony.",
-    pdfPages: ["/offer-pages/obozy-kid-2026/page-1.png"],
+    pdfPages: ["/offer-pages/obozy-kid-2026/page-1.jpg"],
     downloadPdfSrc: "/offer-pdfs/obozy-kid-2026.pdf",
   },
 ];
