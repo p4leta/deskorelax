@@ -27,7 +27,7 @@ const PageHero = ({
   reverseOnDesktop = false,
 }: PageHeroProps) => {
   return (
-    <section className={cn("section-frame pt-3 pb-8 md:pt-36 md:pb-12", className)}>
+    <section className={cn("section-frame pt-3 pb-8 md:pt-12 md:pb-12", className)}>
       <div className="container mx-auto md:px-4">
         <div className={cn("subpage-hero", panelClassName)}>
           <div className="ambient-blob -left-16 top-12 h-44 w-44 bg-sunset/20" />

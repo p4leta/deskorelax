@@ -13,7 +13,7 @@ const galleryVariants = [
 const Gallery = () => {
   return (
     <Layout>
-      <section className="px-3 pb-12 pt-3 md:px-4 md:pb-16 md:pt-36">
+      <section className="px-3 pb-12 pt-3 md:px-4 md:pb-16 md:pt-12">
         <div className="container mx-auto max-w-6xl">
           <div className="grid gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
             {["01", "02", "03", "04", "05", "06"].map((item, index) => (

@@ -72,7 +72,7 @@ const Offer = () => {
 
   return (
     <Layout>
-      <section className="px-2 pb-10 pt-3 md:px-4 md:pb-16 md:pt-36">
+      <section className="px-2 pb-10 pt-3 md:px-4 md:pb-16 md:pt-12">
         <div className="container mx-auto">
           <div
             className={`grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 transition-all duration-500 ${

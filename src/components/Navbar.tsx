@@ -18,7 +18,8 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 px-1.5 pt-1.5 md:px-4 md:pt-4">
+    <header className="sticky top-0 z-50 overflow-visible bg-[rgba(246,244,240,0.94)] px-1.5 pt-1.5 backdrop-blur-md md:px-4 md:pt-4">
+      <div className="pointer-events-none absolute inset-x-0 -bottom-8 top-0 bg-[linear-gradient(180deg,rgba(246,244,240,0.96)_0%,rgba(246,244,240,0.94)_58%,rgba(246,244,240,0.78)_82%,rgba(246,244,240,0)_100%)]" />
       <div className="container mx-auto">
         <nav className="section-shell px-2 py-2 md:px-6 md:py-3">
           <div className="flex items-center justify-between gap-4">
