@@ -1,8 +1,7 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 type PageHeroProps = {
-  eyebrow: string;
   title: string;
   description: string;
   aside?: ReactNode;
@@ -15,7 +14,6 @@ type PageHeroProps = {
 };
 
 const PageHero = ({
-  eyebrow,
   title,
   description,
   aside,

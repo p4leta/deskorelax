@@ -5,9 +5,8 @@ const Trips = () => {
   return (
     <Layout>
       <PageHero
-        eyebrow="Wyjazdy"
         title="Już wkrótce"
-        description="Pierwsze wyjazdy z Deskorelax są w przygotowaniu"
+        description="Pierwsze wyjazdy z Deskorelax są w przygotowaniu."
         panelClassName="surface-sunset"
         className="pb-16 md:pb-20"
       />

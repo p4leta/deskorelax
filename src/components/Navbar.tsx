@@ -29,6 +29,8 @@ const Navbar = () => {
                   alt="Deskorelax logo"
                   className="h-9 w-9 object-contain md:h-12 md:w-12"
                   src="/deskorelax-logo.png"
+                  loading="eager"
+                  decoding="async"
                 />
               </span>
               <div className="hidden min-[430px]:block">

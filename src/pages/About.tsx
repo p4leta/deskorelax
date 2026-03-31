@@ -25,7 +25,6 @@ const About = () => {
   return (
     <Layout>
       <PageHero
-        eyebrow="O nas"
         title="Nasza historia"
         description={`Jesteśmy trójką przyjaciół, których połączyła jedna rzecz - ogromna zajawka do sportów wodnych. Deskorelax powstał nad naszym jeziorem ponad 15 lat temu, zupełnie naturalnie - jako projekt dla znajomych, wspólne pływanie, wakacje spędzane nad wodą i klimat, którego nie da się stworzyć na siłę. Chodziło po prostu o to, żeby spędzać najlepsze lato w życiu: dużo wody, dużo wiatru, dobra ekipa i totalny chill.
 
@@ -43,6 +42,8 @@ Do dziś Deskorelax to przede wszystkim ludzie, klimat i wspólna zajawka.`}
               <img
                 src={aboutHeroWindsurf}
                 alt="Windsurfing w Deskorelax"
+                loading="eager"
+                decoding="async"
                 className="h-full min-h-[360px] w-full object-cover"
               />
             </div>

@@ -1,6 +1,6 @@
+import { Navigation } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
-import { Navigation } from "lucide-react";
 import spotHeroMap from "@/assets/spot-hero-map.jpg";
 
 const googleMapsLink = "https://maps.app.goo.gl/5q5J3zmwxKsyaU7N6";
@@ -10,7 +10,6 @@ const Spot = () => {
   return (
     <Layout>
       <PageHero
-        eyebrow="Nasz spot"
         title="Idealne miejsce do nauki i zabawy na wodzie"
         description="Płytka woda, stabilny wiatr i przestrzeń, która pracuje zarówno dla pierwszych prób, jak i regularnego pływania."
         panelClassName="surface-seafoam"
@@ -23,6 +22,8 @@ const Spot = () => {
               <img
                 src={spotHeroMap}
                 alt="Mapa spotu Deskorelax"
+                loading="eager"
+                decoding="async"
                 className="h-full min-h-[360px] w-full object-cover"
               />
             </div>
@@ -81,6 +82,7 @@ const Spot = () => {
                   frameBorder="0"
                   className="h-[28rem] w-full"
                   title="Windy - warunki wiatrowe"
+                  loading="lazy"
                 />
               </div>
             </div>

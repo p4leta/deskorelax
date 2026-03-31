@@ -20,10 +20,10 @@ const Footer = () => {
                   alt="Deskorelax logo"
                   className="h-14 w-auto"
                   src="/deskorelax-logo.png"
+                  loading="lazy"
+                  decoding="async"
                 />
               </span>
-              <div className="space-y-4">
-              </div>
               <div className="flex flex-wrap gap-3">
                 <Link to="/oferta" className="cta-inverse">
                   Zobacz ofertę
