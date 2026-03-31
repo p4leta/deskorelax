@@ -57,8 +57,8 @@ const Contact = () => {
                 <div className="icon-badge-ocean mb-3.5 h-11 w-11 md:mb-5 md:h-14 md:w-14">
                   {item.icon}
                 </div>
-                <p className="text-xs font-semibold uppercase tracking-[0.26em] text-white/80">{item.title}</p>
-                <p className="mt-3 font-heading text-[1.05rem] font-semibold tracking-[-0.04em] !text-white md:mt-4 md:text-2xl">
+                <p className="text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-white/80 md:text-xs">{item.title}</p>
+                <p className="mt-2 font-heading text-[0.84rem] font-semibold tracking-[-0.04em] !text-white md:mt-4 md:text-2xl">
                   {item.title === "Email" ? (
                     <>
                       deskorelaxkretowiny

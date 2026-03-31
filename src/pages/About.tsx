@@ -59,10 +59,10 @@ Do dziś Deskorelax to przede wszystkim ludzie, klimat i wspólna zajawka.`}
                 <div className="icon-badge-ocean mx-auto mb-4 h-14 w-14 md:mb-6 md:h-20 md:w-20">
                   {item.icon}
                 </div>
-                <h3 className="font-heading text-[1.8rem] font-semibold tracking-[-0.05em] text-white md:text-3xl">
+                <h3 className="font-heading text-[1.3rem] font-semibold tracking-[-0.05em] text-white md:text-3xl">
                   {item.title}
                 </h3>
-                <p className="mx-auto mt-3 max-w-xs text-[0.95rem] leading-6 text-white/74 md:mt-6 md:text-lg md:leading-8">
+                <p className="mx-auto mt-2.5 max-w-xs text-[0.8rem] leading-5 text-white/74 md:mt-6 md:text-lg md:leading-8">
                   {item.desc}
                 </p>
               </article>

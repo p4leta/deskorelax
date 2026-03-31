@@ -97,13 +97,13 @@ const Offer = () => {
                     <p className={`text-xs font-semibold uppercase tracking-[0.26em] ${variant.eyebrow}`}>
                       Oferta Deskorelax
                     </p>
-                    <h3 className={`mt-2.5 font-heading text-[1.8rem] font-semibold tracking-[-0.05em] md:mt-4 md:text-3xl ${variant.title}`}>
+                    <h3 className={`mt-2 font-heading text-[1.25rem] font-semibold tracking-[-0.05em] md:mt-4 md:text-3xl ${variant.title}`}>
                       {offer.title}
                     </h3>
-                    <p className={`mt-2.5 max-w-2xl text-[0.95rem] leading-6 md:mt-4 md:text-base md:leading-7 ${variant.desc}`}>
+                    <p className={`mt-2 max-w-2xl text-[0.76rem] leading-4 md:mt-4 md:text-base md:leading-7 ${variant.desc}`}>
                       {offer.desc}
                     </p>
-                    <p className={`mt-2.5 text-[0.88rem] italic leading-5 md:mt-4 md:text-sm md:leading-6 ${variant.details}`}>
+                    <p className={`mt-1.5 text-[0.72rem] italic leading-4 md:mt-4 md:text-sm md:leading-6 ${variant.details}`}>
                       {offer.details}
                     </p>
                   </div>

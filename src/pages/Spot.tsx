@@ -37,7 +37,7 @@ const Spot = () => {
               <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.28em] text-foreground/42">Google Maps</p>
-                  <h2 className="mt-3 font-heading text-3xl font-semibold tracking-[-0.05em] text-foreground">
+                  <h2 className="mt-2 font-heading text-[1.25rem] font-semibold tracking-[-0.05em] text-foreground md:mt-3 md:text-3xl">
                     Zobacz dokładnie, gdzie jesteśmy.
                   </h2>
                 </div>
@@ -68,7 +68,7 @@ const Spot = () => {
             <div className="space-y-4 p-3 md:space-y-5 md:p-5">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/45">Windy</p>
-                <h2 className="mt-3 font-heading text-3xl font-semibold tracking-[-0.05em] text-white">
+                <h2 className="mt-2 font-heading text-[1.25rem] font-semibold tracking-[-0.05em] text-white md:mt-3 md:text-3xl">
                   Warunki wiatrowe pod ręką.
                 </h2>
               </div>

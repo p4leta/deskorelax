@@ -107,19 +107,19 @@ const Index = () => {
 
       <section className="px-2 py-3 md:px-4 md:py-10">
         <div className="container mx-auto">
-          <div className="grid gap-4 md:grid-cols-3 md:gap-6">
+          <div className="grid gap-3 md:grid-cols-3 md:gap-5">
             {features.map((item, index) => {
               const variant = featureVariants[index];
 
               return (
-              <article key={item.title} className={`${variant.card} min-h-[220px] p-4 md:min-h-[320px] md:p-10`}>
-                <div className={`mb-5 h-14 w-14 md:mb-10 md:h-20 md:w-20 ${variant.icon}`}>
+              <article key={item.title} className={`${variant.card} min-h-[200px] p-4 md:min-h-[260px] md:p-7`}>
+                <div className={`mb-4 h-12 w-12 md:mb-7 md:h-16 md:w-16 ${variant.icon}`}>
                   {item.icon}
                 </div>
-                <h3 className={`font-heading text-[1.85rem] font-semibold tracking-[-0.05em] md:text-3xl ${variant.title}`}>
+                <h3 className={`font-heading text-[1.2rem] font-semibold tracking-[-0.05em] md:text-[2rem] ${variant.title}`}>
                   {item.title}
                 </h3>
-                <p className={`mt-3 max-w-md text-[0.95rem] leading-6 md:mt-8 md:text-lg md:leading-8 ${variant.desc}`}>{item.desc}</p>
+                <p className={`mt-2 max-w-md text-[0.78rem] leading-5 md:mt-5 md:text-[0.95rem] md:leading-6 ${variant.desc}`}>{item.desc}</p>
               </article>
             )})}
           </div>
@@ -149,10 +149,10 @@ const Index = () => {
                     className="editorial-card surface-seafoam group flex items-start justify-between gap-2.5 p-3.5 md:gap-4 md:p-6"
                   >
                     <div>
-                      <h3 className="font-heading text-[1.5rem] font-semibold tracking-[-0.04em] text-foreground md:text-2xl">
+                      <h3 className="font-heading text-[1.12rem] font-semibold tracking-[-0.04em] text-foreground md:text-2xl">
                         {item.title}
                       </h3>
-                      <p className="mt-2 max-w-lg text-[0.92rem] leading-5 !text-foreground md:mt-3 md:text-sm md:leading-7">
+                      <p className="mt-1.5 max-w-lg text-[0.76rem] leading-4 !text-foreground md:mt-3 md:text-sm md:leading-7">
                         {item.description}
                       </p>
                     </div>
@@ -170,10 +170,10 @@ const Index = () => {
       <section className="px-2 py-4 md:px-4 md:py-12 md:pb-16">
         <div className="container mx-auto">
           <div className="editorial-card surface-wash p-4 md:p-10">
-            <h2 className="max-w-4xl font-heading text-[2rem] font-semibold tracking-[-0.05em] text-foreground md:text-5xl">
+            <h2 className="max-w-4xl font-heading text-[1.45rem] font-semibold tracking-[-0.05em] text-foreground md:text-5xl">
               Gotowy na swoją pierwszą albo kolejną sesję?
             </h2>
-            <p className="mt-3 max-w-3xl text-[0.95rem] leading-6 text-muted-foreground md:mt-4 md:text-base md:leading-7">
+            <p className="mt-2.5 max-w-3xl text-[0.8rem] leading-5 text-muted-foreground md:mt-4 md:text-base md:leading-7">
               Jeśli chcesz zarezerwować kurs, dopytać o terminy albo po prostu poczuć klimat zanim przyjedziesz,
               napisz do nas.
             </p>
