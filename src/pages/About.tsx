@@ -7,10 +7,6 @@ const About = () => {
       <section className="py-16 md:py-24">
         <div className="container mx-auto max-w-4xl px-4">
           <h1 className="subpage-title-kretowiny mb-6 text-center text-4xl font-extrabold md:text-5xl">O nas</h1>
-          <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-muted-foreground">
-            Poznaj Deskorelax - szkołę windsurfingową, w której pasja spotyka się z relaksem.
-          </p>
-
           <div className="mb-12 rounded-xl border border-border bg-card p-8 md:p-12">
             <h2 className="mb-4 font-heading text-2xl font-bold">Nasza historia</h2>
             <p className="mb-4 leading-relaxed text-muted-foreground">

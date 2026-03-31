@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import { MapPin, Wind, Thermometer, Waves } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 const googleMapsLink = "https://maps.app.goo.gl/5q5J3zmwxKsyaU7N6";
 const googleMapsEmbed = "https://www.google.com/maps?q=Deskorelax%20Kretowiny&output=embed";
@@ -47,20 +47,18 @@ const Spot = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { icon: <Wind size={24} />, title: "Wiatr", desc: "Stabilne warunki wiatrowe, idealne do nauki" },
-              { icon: <Waves size={24} />, title: "Akwen", desc: "Płytka woda z piaszczystym dnem" },
-              { icon: <Thermometer size={24} />, title: "Sezon", desc: "Od maja do września — najlepsze miesiące na surfing" },
-            ].map((item, i) => (
-              <div key={i} className="bg-card rounded-xl border border-border p-6 text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-secondary/20 text-secondary mb-3">
-                  {item.icon}
-                </div>
-                <h3 className="font-heading font-semibold mb-1">{item.title}</h3>
-                <p className="text-muted-foreground text-sm">{item.desc}</p>
-              </div>
-            ))}
+          <div className="mt-8 bg-card rounded-xl border border-border p-4 md:p-6">
+            <h3 className="font-heading text-xl font-semibold mb-4 text-center">Warunki wiatrowe (Windy)</h3>
+            <div className="overflow-hidden rounded-xl border border-border bg-white/20">
+              <iframe
+                width="650"
+                height="450"
+                src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=%C2%B0C&metricWind=kt&zoom=11&overlay=wind&product=ecmwf&level=surface&lat=53.872&lon=20.023&detailLat=53.908&detailLon=20.024&detail=true"
+                frameBorder="0"
+                className="w-full"
+                title="Windy - warunki wiatrowe"
+              />
+            </div>
           </div>
         </div>
       </section>

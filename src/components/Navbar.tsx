@@ -19,18 +19,14 @@ const Navbar = () => {
   return (
     <div className="sticky top-0 z-50">
       <nav className="relative bg-[linear-gradient(to_bottom,rgba(228,210,182,0.88)_0%,rgba(228,210,182,0.72)_38%,rgba(228,210,182,0.28)_72%,rgba(228,210,182,0)_100%)] backdrop-blur-md">
-        <div className="container mx-auto px-4 flex items-center justify-between h-16">
+        <div className="container mx-auto px-4 flex items-center justify-between h-[4.5rem]">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center">
             <img
               alt="Deskorelax logo"
-              className="h-10 w-auto"
+              className="h-14 w-auto"
               src="/lovable-uploads/36a29ae7-c05d-4c13-8619-4043a2f8ff82.png"
             />
-
-            <span className="font-heading font-bold text-xl text-primary hidden sm:inline">
-              Deskorelax
-            </span>
           </Link>
 
           {/* Desktop nav */}
