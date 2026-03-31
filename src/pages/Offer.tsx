@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { offers } from "@/data/offers";
 import { Download, MoveRight } from "lucide-react";
-import { useEffect, useState } from "react";
+import { startTransition, useEffect, useState } from "react";
 
 const offerCardVariants: Record<
   string,
@@ -76,7 +76,7 @@ const Offer = () => {
         <div className="container mx-auto">
           <div
             className={`grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 transition-all duration-500 ${
-              activeOffer ? "pointer-events-none scale-[0.985] opacity-25 blur-[10px]" : "scale-100 opacity-100"
+              activeOffer ? "pointer-events-none opacity-20" : "opacity-100"
             }`}
           >
             {offers.map((offer, index) => {
@@ -86,7 +86,11 @@ const Offer = () => {
               <button
                 key={offer.slug}
                 type="button"
-                onClick={() => setActiveSlug(offer.slug)}
+                onClick={() => {
+                  startTransition(() => {
+                    setActiveSlug(offer.slug);
+                  });
+                }}
                 className={`${variant.card} block rounded-[1.2rem] p-4 text-left transition-all duration-300 hover:-translate-y-1 md:rounded-[1.75rem] md:p-8`}
               >
                 <div className="flex h-full min-h-[220px] flex-col justify-between gap-4 md:min-h-[320px] md:gap-8">
@@ -119,7 +123,7 @@ const Offer = () => {
       </section>
 
       {activeOffer ? (
-        <div className="fixed inset-0 z-[100] bg-[rgba(8,18,28,0.62)] backdrop-blur-xl" onClick={() => setActiveSlug(null)}>
+        <div className="fixed inset-0 z-[100] bg-[rgba(8,18,28,0.78)]" onClick={() => setActiveSlug(null)}>
           <div className="flex h-full items-start justify-center overflow-y-auto px-4 py-24 md:px-8">
             <div className="w-full max-w-[96rem]">
               <div className="mb-4 flex justify-end">
@@ -167,6 +171,9 @@ const Offer = () => {
                           <img
                             src={pageSrc}
                             alt={`${activeOffer.panelTitle} - strona ${index + 1}`}
+                            decoding="async"
+                            fetchPriority={index === 0 ? "high" : "auto"}
+                            loading={index === 0 ? "eager" : "lazy"}
                             className="block h-auto w-full"
                           />
                         </figure>
