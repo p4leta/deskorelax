@@ -33,12 +33,12 @@ const Spot = () => {
 
       <section className="px-3 py-3 md:px-4 md:pb-16">
         <div className="container mx-auto grid gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(360px,0.96fr)]">
-          <div className="section-shell surface-sunset p-3 md:p-6">
-            <div className="flex flex-col gap-4 p-3 md:gap-5 md:p-5">
-              <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div className="section-shell surface-sunset flex h-full flex-col p-2 md:p-4">
+            <div className="flex h-full flex-col gap-3 p-2 md:gap-4 md:p-3">
+              <div className="flex flex-col gap-2.5 md:flex-row md:items-end md:justify-between">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.28em] text-foreground/42">Google Maps</p>
-                  <h2 className="mt-2 font-heading text-[1.25rem] font-semibold tracking-[-0.05em] text-foreground md:mt-3 md:text-3xl">
+                  <h2 className="mt-1.5 font-heading text-[1.12rem] font-semibold tracking-[-0.05em] text-foreground md:mt-2 md:text-[1.75rem]">
                     Zobacz dokładnie, gdzie jesteśmy.
                   </h2>
                 </div>
@@ -46,18 +46,18 @@ const Spot = () => {
                   href={googleMapsLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cta-secondary"
+                  className="cta-secondary h-10 px-4 text-sm"
                 >
                   <Navigation size={18} />
                   Otwórz w Google Maps
                 </a>
               </div>
 
-              <div className="media-frame overflow-hidden">
+              <div className="media-frame flex-1 overflow-hidden">
                 <iframe
                   title="Mapa Google Deskorelax"
                   src={googleMapsEmbed}
-                  className="h-72 w-full bg-white md:h-[28rem]"
+                  className="h-[24rem] w-full bg-white md:h-[36rem]"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
@@ -65,22 +65,22 @@ const Spot = () => {
             </div>
           </div>
 
-          <div className="section-shell-dark surface-ocean p-3 md:p-6">
-            <div className="space-y-4 p-3 md:space-y-5 md:p-5">
+          <div className="section-shell-dark surface-ocean flex h-full flex-col p-2 md:p-4">
+            <div className="flex h-full flex-col gap-3 p-2 md:gap-4 md:p-3">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/45">Windy</p>
-                <h2 className="mt-2 font-heading text-[1.25rem] font-semibold tracking-[-0.05em] text-white md:mt-3 md:text-3xl">
+                <h2 className="mt-1.5 font-heading text-[1.12rem] font-semibold tracking-[-0.05em] text-white md:mt-2 md:text-[1.75rem]">
                   Warunki wiatrowe pod ręką.
                 </h2>
               </div>
 
-              <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5">
+              <div className="flex-1 overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5">
                 <iframe
                   width="650"
                   height="450"
                   src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=%C2%B0C&metricWind=kt&zoom=11&overlay=wind&product=ecmwf&level=surface&lat=53.872&lon=20.023&detailLat=53.908&detailLon=20.024&detail=true"
                   frameBorder="0"
-                  className="h-[28rem] w-full"
+                  className="h-[24rem] w-full md:h-[36rem]"
                   title="Windy - warunki wiatrowe"
                   loading="lazy"
                 />
