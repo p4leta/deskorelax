@@ -5,14 +5,14 @@ const googleMapsLink = "https://maps.app.goo.gl/5q5J3zmwxKsyaU7N6";
 
 const Footer = () => {
   return (
-    <footer className="relative z-10 px-4 pb-6 pt-12 md:pb-8 md:pt-16">
+    <footer className="relative z-10 px-3 pb-5 pt-10 md:px-4 md:pb-8 md:pt-16">
       <div className="container mx-auto">
-        <div className="section-shell-dark surface-ocean overflow-hidden px-6 py-10 md:px-10 md:py-12">
+        <div className="section-shell-dark surface-ocean overflow-hidden px-4 py-8 md:px-10 md:py-12">
           <div className="ambient-blob -right-10 top-6 h-44 w-44 bg-sunset/30" />
           <div className="ambient-blob bottom-0 left-6 h-36 w-36 bg-primary/30" />
           <div className="ambient-blob left-[38%] top-[10%] h-28 w-28 bg-ocean-light/25" />
 
-          <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)_minmax(0,0.8fr)]">
+          <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)_minmax(0,0.8fr)]">
             <div className="space-y-5">
               <span className="eyebrow p-2">
                 <img

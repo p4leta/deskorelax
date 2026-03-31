@@ -11,7 +11,7 @@ const NotFound = () => {
 
   return (
     <Layout>
-      <section className="px-4 pb-16 pt-32 md:pt-40">
+      <section className="px-4 pb-16 pt-3 md:pt-36">
         <div className="container mx-auto">
           <div className="section-shell mx-auto max-w-4xl px-6 py-12 text-center md:px-10 md:py-16">
             <span className="eyebrow">404 / Lost at sea</span>

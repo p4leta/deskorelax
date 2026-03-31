@@ -72,10 +72,10 @@ const Offer = () => {
 
   return (
     <Layout>
-      <section className="px-4 pb-16 pt-32 md:pt-40">
+      <section className="px-2 pb-10 pt-3 md:px-4 md:pb-16 md:pt-36">
         <div className="container mx-auto">
           <div
-            className={`grid grid-cols-1 gap-6 sm:grid-cols-2 transition-all duration-500 ${
+            className={`grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 transition-all duration-500 ${
               activeOffer ? "pointer-events-none scale-[0.985] opacity-25 blur-[10px]" : "scale-100 opacity-100"
             }`}
           >
@@ -87,23 +87,23 @@ const Offer = () => {
                 key={offer.slug}
                 type="button"
                 onClick={() => setActiveSlug(offer.slug)}
-                className={`${variant.card} block rounded-[1.75rem] p-8 text-left transition-all duration-300 hover:-translate-y-1`}
+                className={`${variant.card} block rounded-[1.2rem] p-4 text-left transition-all duration-300 hover:-translate-y-1 md:rounded-[1.75rem] md:p-8`}
               >
-                <div className="flex h-full flex-col justify-between gap-8 min-h-[320px]">
+                <div className="flex h-full min-h-[220px] flex-col justify-between gap-4 md:min-h-[320px] md:gap-8">
                   <div>
-                    <div className={`mb-5 h-16 w-16 ${variant.icon}`}>
+                    <div className={`mb-3.5 h-12 w-12 md:mb-5 md:h-16 md:w-16 ${variant.icon}`}>
                       {offer.icon}
                     </div>
                     <p className={`text-xs font-semibold uppercase tracking-[0.26em] ${variant.eyebrow}`}>
                       Oferta Deskorelax
                     </p>
-                    <h3 className={`mt-4 font-heading text-3xl font-semibold tracking-[-0.05em] ${variant.title}`}>
+                    <h3 className={`mt-2.5 font-heading text-[1.8rem] font-semibold tracking-[-0.05em] md:mt-4 md:text-3xl ${variant.title}`}>
                       {offer.title}
                     </h3>
-                    <p className={`mt-4 max-w-2xl text-base leading-7 ${variant.desc}`}>
+                    <p className={`mt-2.5 max-w-2xl text-[0.95rem] leading-6 md:mt-4 md:text-base md:leading-7 ${variant.desc}`}>
                       {offer.desc}
                     </p>
-                    <p className={`mt-4 text-sm italic leading-6 ${variant.details}`}>
+                    <p className={`mt-2.5 text-[0.88rem] italic leading-5 md:mt-4 md:text-sm md:leading-6 ${variant.details}`}>
                       {offer.details}
                     </p>
                   </div>

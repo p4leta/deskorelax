@@ -30,10 +30,10 @@ const Spot = () => {
         }
       />
 
-      <section className="px-4 py-4 md:pb-16">
+      <section className="px-3 py-3 md:px-4 md:pb-16">
         <div className="container mx-auto grid gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(360px,0.96fr)]">
-          <div className="section-shell surface-sunset p-4 md:p-6">
-            <div className="flex flex-col gap-5 p-4 md:p-5">
+          <div className="section-shell surface-sunset p-3 md:p-6">
+            <div className="flex flex-col gap-4 p-3 md:gap-5 md:p-5">
               <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.28em] text-foreground/42">Google Maps</p>
@@ -64,8 +64,8 @@ const Spot = () => {
             </div>
           </div>
 
-          <div className="section-shell-dark surface-ocean p-4 md:p-6">
-            <div className="space-y-5 p-4 md:p-5">
+          <div className="section-shell-dark surface-ocean p-3 md:p-6">
+            <div className="space-y-4 p-3 md:space-y-5 md:p-5">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/45">Windy</p>
                 <h2 className="mt-3 font-heading text-3xl font-semibold tracking-[-0.05em] text-white">

@@ -50,19 +50,19 @@ Do dziś Deskorelax to przede wszystkim ludzie, klimat i wspólna zajawka.`}
         }
       />
 
-      <section className="px-4 py-4 md:pb-16">
+      <section className="px-2 py-2.5 md:px-4 md:pb-16">
         <div className="container mx-auto">
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-3 md:gap-6">
             {values.map((item) => {
               return (
-              <article key={item.title} className="editorial-card-dark surface-ocean p-8 text-center md:p-10">
-                <div className="icon-badge-ocean mx-auto mb-6 h-20 w-20">
+              <article key={item.title} className="editorial-card-dark surface-ocean p-4 text-center md:p-10">
+                <div className="icon-badge-ocean mx-auto mb-4 h-14 w-14 md:mb-6 md:h-20 md:w-20">
                   {item.icon}
                 </div>
-                <h3 className="font-heading text-3xl font-semibold tracking-[-0.05em] text-white">
+                <h3 className="font-heading text-[1.8rem] font-semibold tracking-[-0.05em] text-white md:text-3xl">
                   {item.title}
                 </h3>
-                <p className="mx-auto mt-6 max-w-xs text-base leading-8 text-white/74 md:text-lg">
+                <p className="mx-auto mt-3 max-w-xs text-[0.95rem] leading-6 text-white/74 md:mt-6 md:text-lg md:leading-8">
                   {item.desc}
                 </p>
               </article>
