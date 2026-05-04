@@ -12,6 +12,20 @@ dist
 dist-ssr
 *.local
 
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Local build/test/deploy state
+coverage
+.vercel
+.netlify
+.turbo
+.vite
+.cache
+.codex
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
