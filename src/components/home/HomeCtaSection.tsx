@@ -1,11 +1,12 @@
 import PrefetchLink from "@/components/PrefetchLink";
+import Reveal from "@/components/motion/Reveal";
 
 const HomeCtaSection = () => {
   return (
     <section className="px-2 py-4 md:px-4 md:pb-16 md:py-12">
       <div className="container mx-auto">
-        <div className="editorial-card surface-wash p-4 md:p-10">
-          <h2 className="max-w-4xl font-heading text-[1.45rem] font-semibold tracking-[-0.05em] text-foreground md:text-5xl">
+        <Reveal className="editorial-card surface-wash p-4 md:p-10">
+          <h2 className="max-w-4xl font-heading text-[1.45rem] font-semibold tracking-normal text-foreground md:text-5xl">
             Gotowy na swoją pierwszą albo kolejną sesję?
           </h2>
           <p className="mt-2.5 max-w-3xl text-[0.8rem] leading-5 text-muted-foreground md:mt-4 md:text-base md:leading-7">
@@ -20,7 +21,7 @@ const HomeCtaSection = () => {
               Poznaj nas lepiej
             </PrefetchLink>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

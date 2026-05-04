@@ -1,6 +1,6 @@
-import type { FocusEvent, MouseEvent, TouchEvent } from "react";
+import type { FocusEvent, MouseEvent, PointerEvent, TouchEvent } from "react";
 import { Link, type LinkProps, type To } from "react-router-dom";
-import { prefetchRoute } from "@/lib/route-prefetch";
+import { prefetchRoute, preloadCriticalAssetsForRoute } from "@/lib/route-prefetch";
 
 type PrefetchLinkProps = LinkProps;
 
@@ -16,6 +16,7 @@ const PrefetchLink = ({
   to,
   onFocus,
   onMouseEnter,
+  onPointerDown,
   onTouchStart,
   ...props
 }: PrefetchLinkProps) => {
@@ -24,6 +25,7 @@ const PrefetchLink = ({
   const handlePrefetch = () => {
     if (pathname) {
       prefetchRoute(pathname);
+      preloadCriticalAssetsForRoute(pathname);
     }
   };
 
@@ -37,6 +39,11 @@ const PrefetchLink = ({
     onMouseEnter?.(event);
   };
 
+  const handlePointerDown = (event: PointerEvent<HTMLAnchorElement>) => {
+    handlePrefetch();
+    onPointerDown?.(event);
+  };
+
   const handleTouchStart = (event: TouchEvent<HTMLAnchorElement>) => {
     handlePrefetch();
     onTouchStart?.(event);
@@ -47,6 +54,7 @@ const PrefetchLink = ({
       to={to}
       onFocus={handleFocus}
       onMouseEnter={handleMouseEnter}
+      onPointerDown={handlePointerDown}
       onTouchStart={handleTouchStart}
       {...props}
     />

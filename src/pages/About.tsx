@@ -1,7 +1,7 @@
-import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import { Award, Heart, Users } from "lucide-react";
 import aboutHeroWindsurf from "@/assets/about-hero-windsurf.jpg";
+import Reveal from "@/components/motion/Reveal";
 
 const values = [
   {
@@ -23,7 +23,7 @@ const values = [
 
 const About = () => {
   return (
-    <Layout>
+    <>
       <PageHero
         title="Nasza historia"
         description={`Jesteśmy trójką przyjaciół, których połączyła jedna rzecz - ogromna zajawka do sportów wodnych. Deskorelax powstał nad naszym jeziorem ponad 15 lat temu, zupełnie naturalnie - jako projekt dla znajomych, wspólne pływanie, wakacje spędzane nad wodą i klimat, którego nie da się stworzyć na siłę. Chodziło po prostu o to, żeby spędzać najlepsze lato w życiu: dużo wody, dużo wiatru, dobra ekipa i totalny chill.
@@ -56,22 +56,22 @@ Do dziś Deskorelax to przede wszystkim ludzie, klimat i wspólna zajawka.`}
           <div className="grid gap-4 md:grid-cols-3 md:gap-6">
             {values.map((item) => {
               return (
-              <article key={item.title} className="editorial-card-dark surface-ocean p-4 text-center md:p-10">
+              <Reveal as="article" key={item.title} className="editorial-card-dark surface-ocean p-4 text-center md:p-10">
                 <div className="icon-badge-ocean mx-auto mb-4 h-14 w-14 md:mb-6 md:h-20 md:w-20">
                   {item.icon}
                 </div>
-                <h3 className="font-heading text-[1.3rem] font-semibold tracking-[-0.05em] text-white md:text-3xl">
+                <h3 className="font-heading text-[1.3rem] font-semibold tracking-normal text-white md:text-3xl">
                   {item.title}
                 </h3>
                 <p className="mx-auto mt-2.5 max-w-xs text-[0.8rem] leading-5 text-white/74 md:mt-6 md:text-lg md:leading-8">
                   {item.desc}
                 </p>
-              </article>
+              </Reveal>
             )})}
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 };
 

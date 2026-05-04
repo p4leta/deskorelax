@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import Reveal from "@/components/motion/Reveal";
 
 type PageHeroProps = {
   title: string;
@@ -27,10 +28,7 @@ const PageHero = ({
   return (
     <section className={cn("section-frame section-frame-seamless pt-3 pb-8 md:pt-12 md:pb-12", className)}>
       <div className="container mx-auto md:px-4">
-        <div className={cn("subpage-hero", panelClassName)}>
-          <div className="ambient-blob -left-16 top-12 h-44 w-44 bg-sunset/20" />
-          <div className="ambient-blob bottom-0 right-0 h-56 w-56 bg-primary/20" />
-
+        <Reveal className={cn("subpage-hero", panelClassName)}>
           <div className={cn("subpage-hero-grid relative", reverseOnDesktop && "lg:grid-cols-[minmax(360px,0.96fr)_minmax(0,1.04fr)]")}>
             <div className={cn("space-y-7", contentClassName)}>
               <div className="space-y-5">
@@ -53,7 +51,7 @@ const PageHero = ({
               </div>
             ) : null}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

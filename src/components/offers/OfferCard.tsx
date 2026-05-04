@@ -1,4 +1,5 @@
 import { MoveRight } from "lucide-react";
+import { motion } from "framer-motion";
 import type { OfferItem } from "@/data/offers";
 
 const offerCardVariants: Record<
@@ -41,13 +42,13 @@ const offerCardVariants: Record<
     arrow: "border border-white/15 bg-white/10 text-white",
   },
   "obozy-dzieciece": {
-    card: "editorial-card",
-    icon: "icon-badge-sunset",
+    card: "editorial-card surface-seafoam",
+    icon: "icon-badge-seafoam",
     eyebrow: "text-foreground/42",
     title: "text-foreground",
     desc: "text-muted-foreground",
     details: "text-muted-foreground/76",
-    arrow: "border border-foreground/10 bg-white/80 text-foreground",
+    arrow: "border border-primary/12 bg-white/75 text-foreground",
   },
 };
 
@@ -61,13 +62,18 @@ const OfferCard = ({ offer, onOpen, onPreload }: OfferCardProps) => {
   const variant = offerCardVariants[offer.slug];
 
   return (
-    <button
+    <motion.button
       type="button"
       onClick={() => onOpen(offer)}
       onFocus={() => onPreload(offer)}
       onMouseEnter={() => onPreload(offer)}
       onTouchStart={() => onPreload(offer)}
-      className={`${variant.card} block rounded-[1.2rem] p-4 text-left transition-transform duration-200 hover:-translate-y-1 md:rounded-[1.75rem] md:p-8`}
+      className={`${variant.card} block rounded-[1rem] p-4 text-left transition-transform duration-200 hover:-translate-y-1 md:rounded-[1.25rem] md:p-8`}
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
+      whileTap={{ scale: 0.985 }}
     >
       <div className="flex h-full min-h-[220px] flex-col justify-between gap-4 md:min-h-[320px] md:gap-8">
         <div>
@@ -75,9 +81,7 @@ const OfferCard = ({ offer, onOpen, onPreload }: OfferCardProps) => {
           <p className={`text-xs font-semibold uppercase tracking-[0.26em] ${variant.eyebrow}`}>
             Oferta Deskorelax
           </p>
-          <h3
-            className={`mt-2 font-heading text-[1.25rem] font-semibold tracking-[-0.05em] md:mt-4 md:text-3xl ${variant.title}`}
-          >
+          <h3 className={`mt-2 font-heading text-[1.25rem] font-semibold tracking-normal md:mt-4 md:text-3xl ${variant.title}`}>
             {offer.title}
           </h3>
           <p
@@ -96,7 +100,7 @@ const OfferCard = ({ offer, onOpen, onPreload }: OfferCardProps) => {
           <MoveRight size={18} />
         </span>
       </div>
-    </button>
+    </motion.button>
   );
 };
 

@@ -2,12 +2,13 @@ import { ArrowRight } from "lucide-react";
 import PrefetchLink from "@/components/PrefetchLink";
 import heroSailingCard from "@/assets/hero-sailing-card.jpg";
 import { homeEntryPoints } from "./homeContent";
+import Reveal from "@/components/motion/Reveal";
 
 const HomeEntryPointsSection = () => {
   return (
     <section className="px-2 py-4 md:px-4 md:py-12">
       <div className="container mx-auto">
-        <div className="section-shell-dark px-3 py-4 md:px-10 md:py-10">
+        <Reveal className="section-shell-dark px-3 py-4 md:px-10 md:py-10">
           <div className="grid gap-4 md:gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
             <div className="editorial-card surface-sunset p-2 md:p-3">
               <div className="media-frame min-h-[220px] overflow-hidden rounded-[1rem] border border-white/25 md:min-h-[320px] md:rounded-[1.45rem]">
@@ -27,10 +28,10 @@ const HomeEntryPointsSection = () => {
                   <PrefetchLink
                     key={item.title}
                     to={item.href}
-                    className="editorial-card surface-seafoam group flex items-start justify-between gap-2.5 p-3.5 md:gap-4 md:p-6"
+                    className="editorial-card surface-seafoam premium-link-card group flex items-start justify-between gap-2.5 p-3.5 md:gap-4 md:p-6"
                   >
                     <div>
-                      <h3 className="font-heading text-[1.12rem] font-semibold tracking-[-0.04em] text-foreground md:text-2xl">
+                      <h3 className="font-heading text-[1.12rem] font-semibold tracking-normal text-foreground md:text-2xl">
                         {item.title}
                       </h3>
                       <p className="mt-1.5 max-w-lg text-[0.76rem] leading-4 !text-foreground md:mt-3 md:text-sm md:leading-7">
@@ -45,7 +46,7 @@ const HomeEntryPointsSection = () => {
               })}
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

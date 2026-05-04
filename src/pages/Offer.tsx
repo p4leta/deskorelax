@@ -1,5 +1,5 @@
 import { startTransition, useEffect, useState } from "react";
-import Layout from "@/components/Layout";
+import { AnimatePresence } from "framer-motion";
 import OfferCard from "@/components/offers/OfferCard";
 import OfferPreviewModal from "@/components/offers/OfferPreviewModal";
 import { offers, type OfferItem } from "@/data/offers";
@@ -43,11 +43,11 @@ const Offer = () => {
   };
 
   return (
-    <Layout>
+    <>
       <section className="px-2 pb-10 pt-3 md:px-4 md:pb-16 md:pt-12">
         <div className="container mx-auto">
           <div
-            className={`grid grid-cols-1 gap-4 transition-opacity duration-200 sm:grid-cols-2 md:gap-6 ${
+            className={`grid grid-cols-1 gap-4 transition-opacity duration-300 sm:grid-cols-2 md:gap-6 ${
               activeOffer ? "pointer-events-none opacity-20" : "opacity-100"
             }`}
           >
@@ -63,8 +63,10 @@ const Offer = () => {
         </div>
       </section>
 
-      {activeOffer ? <OfferPreviewModal offer={activeOffer} onClose={() => setActiveSlug(null)} /> : null}
-    </Layout>
+      <AnimatePresence>
+        {activeOffer ? <OfferPreviewModal offer={activeOffer} onClose={() => setActiveSlug(null)} /> : null}
+      </AnimatePresence>
+    </>
   );
 };
 

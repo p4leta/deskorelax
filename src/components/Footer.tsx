@@ -1,6 +1,7 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import InstagramBrandIcon from "@/components/InstagramBrandIcon";
+import Reveal from "@/components/motion/Reveal";
 
 const googleMapsLink = "https://maps.app.goo.gl/5q5J3zmwxKsyaU7N6";
 
@@ -8,11 +9,7 @@ const Footer = () => {
   return (
     <footer className="relative px-3 pb-5 pt-10 md:px-4 md:pb-8 md:pt-16">
       <div className="container mx-auto">
-        <div className="section-shell-dark surface-ocean overflow-hidden px-4 py-8 md:px-10 md:py-12">
-          <div className="ambient-blob -right-10 top-6 h-44 w-44 bg-sunset/30" />
-          <div className="ambient-blob bottom-0 left-6 h-36 w-36 bg-primary/30" />
-          <div className="ambient-blob left-[38%] top-[10%] h-28 w-28 bg-ocean-light/25" />
-
+        <Reveal className="section-shell-dark surface-ocean overflow-hidden px-4 py-8 md:px-10 md:py-12">
           <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)_minmax(0,0.8fr)]">
             <div className="space-y-5">
               <span className="eyebrow p-2">
@@ -94,7 +91,7 @@ const Footer = () => {
           <div className="relative mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/45 md:flex-row md:items-center md:justify-between">
             <p>© {new Date().getFullYear()} Deskorelax. Wszelkie prawa zastrzeżone.</p>
           </div>
-        </div>
+        </Reveal>
       </div>
     </footer>
   );

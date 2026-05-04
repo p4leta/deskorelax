@@ -1,4 +1,5 @@
 import { homeFeatures } from "./homeContent";
+import Reveal from "@/components/motion/Reveal";
 
 const HomeFeaturesSection = () => {
   return (
@@ -9,20 +10,21 @@ const HomeFeaturesSection = () => {
             const Icon = item.icon;
 
             return (
-              <article
+              <Reveal
+                as="article"
                 key={item.title}
                 className="editorial-card-dark surface-ocean min-h-[200px] p-4 md:min-h-[260px] md:p-7"
               >
                 <div className="icon-badge-ocean mb-4 h-12 w-12 md:mb-7 md:h-16 md:w-16">
                   <Icon size={28} />
                 </div>
-                <h3 className="font-heading text-[1.2rem] font-semibold tracking-[-0.05em] text-white md:text-[2rem]">
+                <h3 className="font-heading text-[1.2rem] font-semibold tracking-normal text-white md:text-[2rem]">
                   {item.title}
                 </h3>
                 <p className="mt-2 max-w-md text-[0.78rem] leading-5 text-white/78 md:mt-5 md:text-[0.95rem] md:leading-6">
                   {item.desc}
                 </p>
-              </article>
+              </Reveal>
             );
           })}
         </div>

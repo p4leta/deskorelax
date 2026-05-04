@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import InstagramBrandIcon from "@/components/InstagramBrandIcon";
 import PrefetchLink from "@/components/PrefetchLink";
 import { cn } from "@/lib/utils";
@@ -22,7 +23,7 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-40 px-1.5 pt-1.5 md:px-4 md:pt-4">
       <div className="container mx-auto">
-        <nav className="section-shell px-2 py-2 md:px-6 md:py-3">
+        <nav className="section-shell px-2 py-2 md:px-5 md:py-3">
           <div className="flex items-center justify-between gap-4">
             <PrefetchLink to="/" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-[0_10px_30px_rgba(15,32,46,0.14)] md:h-14 md:w-14">
@@ -35,7 +36,7 @@ const Navbar = () => {
                 />
               </span>
               <div className="hidden min-[430px]:block">
-                <p className="font-heading text-lg font-semibold tracking-[-0.04em] text-foreground">Deskorelax</p>
+                <p className="font-heading text-lg font-semibold tracking-normal text-foreground">Deskorelax</p>
                 <p className="text-xs font-medium uppercase tracking-[0.28em] text-foreground/50">
                   Windsurfing & żeglarstwo
                 </p>
@@ -50,9 +51,16 @@ const Navbar = () => {
                   <PrefetchLink
                     key={link.to}
                     to={link.to}
-                    className={cn("nav-pill", active && "nav-pill-active")}
+                    className={cn("nav-pill relative", active && "nav-pill-active")}
                   >
-                    {link.label}
+                    {active ? (
+                      <motion.span
+                        layoutId="active-nav-pill"
+                        className="pointer-events-none absolute inset-0 rounded-full bg-white shadow-[0_10px_24px_rgba(15,32,46,0.12)]"
+                        transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                      />
+                    ) : null}
+                    <span className="relative">{link.label}</span>
                   </PrefetchLink>
                 );
               })}
@@ -70,47 +78,66 @@ const Navbar = () => {
               </a>
             </div>
 
-            <button
+            <motion.button
               type="button"
               onClick={() => setIsOpen((current) => !current)}
               className="cta-secondary h-9 px-3 md:h-11 md:px-4 lg:hidden"
               aria-label={isOpen ? "Zamknij menu" : "Otwórz menu"}
               aria-expanded={isOpen}
+              whileTap={{ scale: 0.96 }}
             >
-              {isOpen ? <X size={18} /> : <Menu size={18} />}
-            </button>
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.span
+                  key={isOpen ? "close" : "menu"}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.14, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  {isOpen ? <X size={18} /> : <Menu size={18} />}
+                </motion.span>
+              </AnimatePresence>
+            </motion.button>
           </div>
 
-          {isOpen ? (
-            <div className="mt-2.5 grid gap-2 border-t border-foreground/10 pt-2.5 lg:hidden">
-              {navLinks.map((link) => {
-                const active = location.pathname === link.to;
+          <AnimatePresence initial={false}>
+            {isOpen ? (
+              <motion.div
+                className="mt-2.5 grid gap-2 border-t border-foreground/10 pt-2.5 lg:hidden"
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+              >
+                {navLinks.map((link) => {
+                  const active = location.pathname === link.to;
 
-                return (
-                  <PrefetchLink
-                    key={link.to}
-                    to={link.to}
-                    onClick={() => setIsOpen(false)}
-                    className={cn("nav-pill justify-between px-3.5 py-2.5", active && "nav-pill-active")}
+                  return (
+                    <PrefetchLink
+                      key={link.to}
+                      to={link.to}
+                      onClick={() => setIsOpen(false)}
+                      className={cn("nav-pill justify-between px-3.5 py-2.5", active && "nav-pill-active")}
+                    >
+                      {link.label}
+                    </PrefetchLink>
+                  );
+                })}
+
+                <div className="flex flex-col gap-2.5 pt-1.5 sm:flex-row">
+                  <a
+                    href="https://www.instagram.com/deskorelax/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cta-secondary flex-1"
                   >
-                    {link.label}
-                  </PrefetchLink>
-                );
-              })}
-
-              <div className="flex flex-col gap-2.5 pt-1.5 sm:flex-row">
-                <a
-                  href="https://www.instagram.com/deskorelax/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-secondary flex-1"
-                >
-                  <InstagramBrandIcon size={18} />
-                  Instagram
-                </a>
-              </div>
-            </div>
-          ) : null}
+                    <InstagramBrandIcon size={18} />
+                    Instagram
+                  </a>
+                </div>
+              </motion.div>
+            ) : null}
+          </AnimatePresence>
         </nav>
       </div>
     </header>
