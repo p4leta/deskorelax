@@ -62,45 +62,48 @@ const OfferCard = ({ offer, onOpen, onPreload }: OfferCardProps) => {
   const variant = offerCardVariants[offer.slug];
 
   return (
-    <motion.button
-      type="button"
-      onClick={() => onOpen(offer)}
-      onFocus={() => onPreload(offer)}
-      onMouseEnter={() => onPreload(offer)}
-      onTouchStart={() => onPreload(offer)}
-      className={`${variant.card} block rounded-[1rem] p-4 text-left transition-transform duration-200 hover:-translate-y-1 md:rounded-[1.25rem] md:p-8`}
+    <motion.div
+      className="h-full transform-gpu"
       initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
-      whileTap={{ scale: 0.985 }}
     >
-      <div className="flex h-full min-h-[220px] flex-col justify-between gap-4 md:min-h-[320px] md:gap-8">
-        <div>
-          <div className={`mb-3.5 h-12 w-12 md:mb-5 md:h-16 md:w-16 ${variant.icon}`}>{offer.icon}</div>
-          <p className={`text-xs font-semibold uppercase tracking-[0.26em] ${variant.eyebrow}`}>
-            Oferta Deskorelax
-          </p>
-          <h3 className={`mt-2 font-heading text-[1.25rem] font-semibold tracking-normal md:mt-4 md:text-3xl ${variant.title}`}>
-            {offer.title}
-          </h3>
-          <p
-            className={`mt-2 max-w-2xl text-[0.76rem] leading-4 md:mt-4 md:text-base md:leading-7 ${variant.desc}`}
-          >
-            {offer.desc}
-          </p>
-          <p
-            className={`mt-1.5 text-[0.72rem] italic leading-4 md:mt-4 md:text-sm md:leading-6 ${variant.details}`}
-          >
-            {offer.details}
-          </p>
-        </div>
+      <button
+        type="button"
+        onClick={() => onOpen(offer)}
+        onFocus={() => onPreload(offer)}
+        onMouseEnter={() => onPreload(offer)}
+        onTouchStart={() => onPreload(offer)}
+        className={`${variant.card} block h-full w-full rounded-[1rem] p-4 text-left transition-transform duration-200 hover:-translate-y-1 active:scale-[0.985] md:rounded-[1.25rem] md:p-8`}
+      >
+        <div className="flex h-full min-h-[220px] flex-col justify-between gap-4 md:min-h-[320px] md:gap-8">
+          <div>
+            <div className={`mb-3.5 h-12 w-12 md:mb-5 md:h-16 md:w-16 ${variant.icon}`}>{offer.icon}</div>
+            <p className={`text-xs font-semibold uppercase tracking-[0.26em] ${variant.eyebrow}`}>
+              Oferta Deskorelax
+            </p>
+            <h3 className={`mt-2 font-heading text-[1.25rem] font-semibold tracking-normal md:mt-4 md:text-3xl ${variant.title}`}>
+              {offer.title}
+            </h3>
+            <p
+              className={`mt-2 max-w-2xl text-[0.76rem] leading-4 md:mt-4 md:text-base md:leading-7 ${variant.desc}`}
+            >
+              {offer.desc}
+            </p>
+            <p
+              className={`mt-1.5 text-[0.72rem] italic leading-4 md:mt-4 md:text-sm md:leading-6 ${variant.details}`}
+            >
+              {offer.details}
+            </p>
+          </div>
 
-        <span className={`inline-flex h-12 w-12 items-center justify-center rounded-full shadow-sm ${variant.arrow}`}>
-          <MoveRight size={18} />
-        </span>
-      </div>
-    </motion.button>
+          <span className={`inline-flex h-12 w-12 items-center justify-center rounded-full shadow-sm ${variant.arrow}`}>
+            <MoveRight size={18} />
+          </span>
+        </div>
+      </button>
+    </motion.div>
   );
 };
 

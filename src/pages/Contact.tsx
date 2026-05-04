@@ -48,28 +48,31 @@ const Contact = () => {
             {contactItems.map((item) => {
               return (
                 <Reveal
-                  as="a"
                   key={item.title}
-                  href={item.href}
-                  target={item.href.startsWith("http") ? "_blank" : undefined}
-                  rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="editorial-card-dark surface-ocean premium-link-card block p-4 transition-transform duration-300 hover:-translate-y-1 md:p-7"
+                  className="h-full transform-gpu"
                 >
-                  <div className="icon-badge-ocean mb-3.5 h-11 w-11 md:mb-5 md:h-14 md:w-14">{item.icon}</div>
-                  <p className="text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-white/80 md:text-xs">
-                    {item.title}
-                  </p>
-                  <p className="mt-2 font-heading text-[0.84rem] font-semibold tracking-normal !text-white md:mt-4 md:text-2xl">
-                    {item.title === "Email" ? (
-                      <>
-                        deskorelaxkretowiny
-                        <wbr />
-                        @gmail.com
-                      </>
-                    ) : (
-                      item.content
-                    )}
-                  </p>
+                  <a
+                    href={item.href}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="editorial-card-dark surface-ocean premium-link-card block h-full p-4 transition-transform duration-300 hover:-translate-y-1 md:p-7"
+                  >
+                    <div className="icon-badge-ocean mb-3.5 h-11 w-11 md:mb-5 md:h-14 md:w-14">{item.icon}</div>
+                    <p className="text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-white/80 md:text-xs">
+                      {item.title}
+                    </p>
+                    <p className="mt-2 font-heading text-[0.84rem] font-semibold tracking-normal !text-white md:mt-4 md:text-2xl">
+                      {item.title === "Email" ? (
+                        <>
+                          deskorelaxkretowiny
+                          <wbr />
+                          @gmail.com
+                        </>
+                      ) : (
+                        item.content
+                      )}
+                    </p>
+                  </a>
                 </Reveal>
               );
             })}
