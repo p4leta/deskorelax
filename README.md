@@ -35,7 +35,7 @@ The gallery page renders up to 16 posts in a 4-column desktop grid and keeps the
 
 - The public site never talks to Instagram directly.
 - `/api/instagram-feed` reads from Supabase cache and refreshes the feed if the cache is stale.
-- `vercel.json` runs `/api/instagram/refresh` every 30 minutes.
+- `vercel.json` runs `/api/instagram/refresh` once per day.
 - The refresh route also refreshes the long-lived Instagram token when it gets close to expiry.
 
 ### Manual refresh
