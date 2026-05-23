@@ -14,17 +14,17 @@ const Spot = () => {
         description="Płytka woda, stabilny wiatr i przestrzeń, która pracuje zarówno dla pierwszych prób, jak i regularnego pływania."
         panelClassName="surface-seafoam"
         reverseOnDesktop
-        contentClassName="self-start pt-2 md:pt-0 lg:pt-2"
-        asideClassName="w-full lg:w-[32rem] xl:w-[36rem]"
+        contentClassName="max-w-[42rem] self-start justify-self-start pt-2 md:pt-0 lg:max-w-none lg:pt-2"
+        asideClassName="w-full max-w-[34rem] lg:max-w-none"
         aside={
           <div className="editorial-card surface-ocean p-2 md:p-3">
-            <div className="media-frame aspect-square w-full overflow-hidden rounded-[1.15rem] bg-white/90 md:min-h-[360px] md:rounded-[1.55rem]">
+            <div className="media-frame aspect-[4/3] w-full overflow-hidden rounded-[1.15rem] bg-white/90 md:rounded-[1.55rem]">
               <img
                 src={spotHeroMap}
                 alt="Mapa spotu Deskorelax"
                 loading="eager"
                 decoding="async"
-                className="h-full w-full object-contain md:min-h-[360px] md:object-cover"
+                className="h-full w-full object-contain md:object-cover"
               />
             </div>
           </div>

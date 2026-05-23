@@ -43,7 +43,7 @@ const Navbar = () => {
               </div>
             </PrefetchLink>
 
-            <div className="hidden items-center gap-1 lg:flex">
+            <div className="hidden items-center gap-1 xl:flex">
               {navLinks.map((link) => {
                 const active = location.pathname === link.to;
 
@@ -66,7 +66,7 @@ const Navbar = () => {
               })}
             </div>
 
-            <div className="hidden items-center gap-3 lg:flex">
+            <div className="hidden items-center gap-3 xl:flex">
               <a
                 href="https://www.instagram.com/deskorelax/"
                 target="_blank"
@@ -81,7 +81,7 @@ const Navbar = () => {
             <motion.button
               type="button"
               onClick={() => setIsOpen((current) => !current)}
-              className="cta-secondary h-9 px-3 md:h-11 md:px-4 lg:hidden"
+              className="cta-secondary h-9 px-3 md:h-11 md:px-4 xl:hidden"
               aria-label={isOpen ? "Zamknij menu" : "Otwórz menu"}
               aria-expanded={isOpen}
               whileTap={{ scale: 0.96 }}
@@ -103,7 +103,7 @@ const Navbar = () => {
           <AnimatePresence initial={false}>
             {isOpen ? (
               <motion.div
-                className="mt-2.5 grid gap-2 border-t border-foreground/10 pt-2.5 lg:hidden"
+                className="mt-2.5 grid gap-2 border-t border-foreground/10 pt-2.5 xl:hidden"
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}

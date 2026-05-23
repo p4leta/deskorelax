@@ -34,17 +34,17 @@ Do dziś Deskorelax to przede wszystkim ludzie, klimat i wspólna zajawka.`}
         className="pb-6 md:pb-8"
         panelClassName="surface-seafoam"
         descriptionClassName="max-w-3xl whitespace-pre-line"
-        contentClassName="lg:max-w-[44rem] lg:self-start"
-        asideClassName="w-full lg:w-[32rem] xl:w-[36rem]"
+        contentClassName="max-w-[42rem] justify-self-start lg:max-w-none lg:self-start"
+        asideClassName="w-full max-w-[34rem] lg:max-w-none"
         aside={
           <div className="editorial-card surface-sunset p-2 md:p-3">
-            <div className="media-frame min-h-[360px] w-full overflow-hidden rounded-[1.55rem]">
+            <div className="media-frame aspect-[4/3] w-full overflow-hidden rounded-[1.55rem]">
               <img
                 src={aboutHeroWindsurf}
                 alt="Windsurfing w Deskorelax"
                 loading="eager"
                 decoding="async"
-                className="h-full min-h-[360px] w-full object-cover"
+                className="h-full w-full object-cover"
               />
             </div>
           </div>
