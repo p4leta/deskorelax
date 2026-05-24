@@ -314,7 +314,7 @@
   }
 
   .subpage-hero-grid {
-    @apply grid justify-items-center gap-5 md:gap-7 lg:grid-cols-[minmax(0,1.16fr)_minmax(18rem,0.84fr)] lg:items-center lg:justify-items-stretch xl:grid-cols-[minmax(0,1.24fr)_minmax(20rem,0.76fr)];
+    @apply grid justify-items-center gap-5 md:gap-7 lg:grid-cols-[minmax(0,0.95fr)_minmax(26rem,1.05fr)] lg:items-center lg:justify-items-stretch xl:grid-cols-[minmax(0,1fr)_minmax(30rem,1fr)];
   }
 
   .subpage-title {

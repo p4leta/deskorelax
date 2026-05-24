@@ -35,7 +35,7 @@ Do dziś Deskorelax to przede wszystkim ludzie, klimat i wspólna zajawka.`}
         panelClassName="surface-seafoam"
         descriptionClassName="max-w-3xl whitespace-pre-line"
         contentClassName="max-w-[42rem] justify-self-start lg:max-w-none lg:self-start"
-        asideClassName="w-full max-w-[34rem] lg:max-w-none"
+        asideClassName="w-full max-w-[56rem] lg:max-w-none"
         aside={
           <div className="editorial-card surface-sunset p-2 md:p-3">
             <div className="media-frame aspect-[4/3] w-full overflow-hidden rounded-[1.55rem]">

@@ -15,7 +15,7 @@ const Spot = () => {
         panelClassName="surface-seafoam"
         reverseOnDesktop
         contentClassName="max-w-[42rem] self-start justify-self-start pt-2 md:pt-0 lg:max-w-none lg:pt-2"
-        asideClassName="w-full max-w-[34rem] lg:max-w-none"
+        asideClassName="w-full max-w-[56rem] lg:max-w-none"
         aside={
           <div className="editorial-card surface-ocean p-2 md:p-3">
             <div className="media-frame aspect-[4/3] w-full overflow-hidden rounded-[1.15rem] bg-white/90 md:rounded-[1.55rem]">
