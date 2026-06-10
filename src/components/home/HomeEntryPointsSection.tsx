@@ -6,7 +6,7 @@ import Reveal from "@/components/motion/Reveal";
 
 const HomeEntryPointsSection = () => {
   return (
-    <section className="px-2 py-4 md:px-4 md:py-12">
+    <section className="content-visibility-auto px-2 py-4 md:px-4 md:py-12">
       <div className="container mx-auto">
         <Reveal className="section-shell-dark px-3 py-4 md:px-10 md:py-10">
           <div className="grid gap-4 md:gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">

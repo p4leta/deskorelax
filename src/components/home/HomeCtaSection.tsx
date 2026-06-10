@@ -3,7 +3,7 @@ import Reveal from "@/components/motion/Reveal";
 
 const HomeCtaSection = () => {
   return (
-    <section className="px-2 py-4 md:px-4 md:pb-16 md:py-12">
+    <section className="content-visibility-auto px-2 py-4 md:px-4 md:pb-16 md:py-12">
       <div className="container mx-auto">
         <Reveal className="editorial-card surface-wash p-4 md:p-10">
           <h2 className="max-w-4xl font-heading text-[1.45rem] font-semibold tracking-normal text-foreground md:text-5xl">

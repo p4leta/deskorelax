@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { useMemo } from "react";
 import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 
 const revealVariants: Variants = {
@@ -20,7 +21,7 @@ type RevealProps = {
   Record<string, unknown>;
 
 const Reveal = ({ children, as = "div", className, delay = 0, once = true, ...props }: RevealProps) => {
-  const Component = motion.create(as);
+  const Component = useMemo(() => motion.create(as), [as]);
 
   return (
     <Component

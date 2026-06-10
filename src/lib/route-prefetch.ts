@@ -3,6 +3,15 @@ import spotHeroMap from "@/assets/spot-hero-map.jpg";
 
 type RouteModuleLoader = () => Promise<unknown>;
 
+type ConnectionInfo = {
+  effectiveType?: string;
+  saveData?: boolean;
+};
+
+type NavigatorWithConnection = Navigator & {
+  connection?: ConnectionInfo;
+};
+
 type PrefetchableRoute =
   | "/o-nas"
   | "/oferta"
@@ -122,38 +131,47 @@ const runAfterIdle = (callback: () => void) => {
   };
 };
 
-const allPrefetchableRoutes: PrefetchableRoute[] = [
-  "/o-nas",
-  "/oferta",
-  "/spot",
-  "/galeria",
-  "/wyjazdy",
-  "/kontakt",
-  "/cennik",
-  "/regulamin",
-  "*",
-];
+const warmupRoutes: PrefetchableRoute[] = ["/oferta", "/kontakt", "/o-nas"];
 
 let appWarmupScheduled = false;
 
+const shouldWarmupRoutes = () => {
+  const connection = (navigator as NavigatorWithConnection).connection;
+
+  if (!connection) {
+    return true;
+  }
+
+  return !connection.saveData && connection.effectiveType !== "slow-2g" && connection.effectiveType !== "2g";
+};
+
 export const scheduleFullAppWarmup = () => {
-  if (typeof window === "undefined" || appWarmupScheduled) {
+  if (typeof window === "undefined" || appWarmupScheduled || !shouldWarmupRoutes()) {
     return () => undefined;
   }
 
   appWarmupScheduled = true;
-  let clearAssetWarmup = () => undefined;
+  let cancelled = false;
+  let clearWarmup = () => undefined;
 
-  const clearRouteWarmup = runAfterIdle(() => {
-    Promise.all(allPrefetchableRoutes.map((route) => routeModuleLoaders[route]().catch(() => undefined))).finally(() => {
-      clearAssetWarmup = runAfterIdle(() => {
-        allPrefetchableRoutes.forEach((route) => preloadCriticalAssetsForRoute(route));
-      });
+  const scheduleNextRoute = (index: number) => {
+    if (cancelled || index >= warmupRoutes.length) {
+      return;
+    }
+
+    clearWarmup = runAfterIdle(() => {
+      const route = warmupRoutes[index];
+
+      prefetchRoute(route);
+      preloadCriticalAssetsForRoute(route);
+      scheduleNextRoute(index + 1);
     });
-  });
+  };
+
+  scheduleNextRoute(0);
 
   return () => {
-    clearRouteWarmup();
-    clearAssetWarmup();
+    cancelled = true;
+    clearWarmup();
   };
 };

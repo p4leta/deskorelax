@@ -2,7 +2,13 @@ import { Wind } from "lucide-react";
 import { motion } from "framer-motion";
 import InstagramBrandIcon from "@/components/InstagramBrandIcon";
 import PrefetchLink from "@/components/PrefetchLink";
-import homeHeroImage from "@/assets/hero-home-new.jpg";
+
+const heroImage = "/generated/hero-home-1600.jpg";
+const heroImageSrcSet = [
+  "/generated/hero-home-960.jpg 960w",
+  "/generated/hero-home-1600.jpg 1600w",
+  "/generated/hero-home-2400.jpg 2400w",
+].join(", ");
 
 const heroContainer = {
   hidden: {},
@@ -34,7 +40,9 @@ const HomeHeroSection = () => {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
           <motion.img
-            src={homeHeroImage}
+            src={heroImage}
+            srcSet={heroImageSrcSet}
+            sizes="(min-width: 1280px) 1184px, (min-width: 768px) calc(100vw - 2rem), calc(100vw - 1rem)"
             alt="Deskorelax przy jeziorze o zachodzie slonca"
             loading="eager"
             fetchPriority="high"

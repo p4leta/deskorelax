@@ -380,6 +380,11 @@
   .premium-link-card:hover {
     transform: translate3d(0, -6px, 0);
   }
+
+  .content-visibility-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 540px;
+  }
 }
 
 @keyframes lake-ripple {
@@ -399,5 +404,15 @@
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-shell::after {
+    display: none;
+  }
+
+  .lake-ripple::before {
+    animation: none;
   }
 }

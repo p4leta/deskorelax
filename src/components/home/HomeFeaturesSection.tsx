@@ -3,7 +3,7 @@ import Reveal from "@/components/motion/Reveal";
 
 const HomeFeaturesSection = () => {
   return (
-    <section className="px-2 py-3 md:px-4 md:py-10">
+    <section className="content-visibility-auto px-2 py-3 md:px-4 md:py-10">
       <div className="container mx-auto">
         <div className="grid gap-3 md:grid-cols-3 md:gap-5">
           {homeFeatures.map((item) => {
