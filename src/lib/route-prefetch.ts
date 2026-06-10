@@ -10,6 +10,8 @@ type PrefetchableRoute =
   | "/galeria"
   | "/wyjazdy"
   | "/kontakt"
+  | "/cennik"
+  | "/regulamin"
   | "*";
 
 const routeModuleLoaders: Record<PrefetchableRoute, RouteModuleLoader> = {
@@ -19,6 +21,8 @@ const routeModuleLoaders: Record<PrefetchableRoute, RouteModuleLoader> = {
   "/galeria": () => import("../pages/Gallery"),
   "/wyjazdy": () => import("../pages/Trips"),
   "/kontakt": () => import("../pages/Contact"),
+  "/cennik": () => import("../pages/Cennik"),
+  "/regulamin": () => import("../pages/Regulamin"),
   "*": () => import("../pages/NotFound"),
 };
 
@@ -125,6 +129,8 @@ const allPrefetchableRoutes: PrefetchableRoute[] = [
   "/galeria",
   "/wyjazdy",
   "/kontakt",
+  "/cennik",
+  "/regulamin",
   "*",
 ];
 

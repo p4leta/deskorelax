@@ -12,6 +12,8 @@ const Spot = lazy(routeLoaders["/spot"]);
 const Gallery = lazy(routeLoaders["/galeria"]);
 const Contact = lazy(routeLoaders["/kontakt"]);
 const Trips = lazy(routeLoaders["/wyjazdy"]);
+const Regulamin = lazy(routeLoaders["/regulamin"]);
+const Cennik = lazy(routeLoaders["/cennik"]);
 const NotFound = lazy(routeLoaders["*"]);
 
 const ScrollToTop = () => {
@@ -52,6 +54,8 @@ const AnimatedRoutes = () => {
           <Route path="/galeria" element={<Gallery />} />
           <Route path="/wyjazdy" element={<Trips />} />
           <Route path="/kontakt" element={<Contact />} />
+          <Route path="/regulamin" element={<Regulamin />} />
+          <Route path="/cennik" element={<Cennik />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </MotionPage>

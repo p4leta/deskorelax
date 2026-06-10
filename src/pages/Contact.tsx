@@ -9,8 +9,8 @@ const contactItems = [
   {
     icon: <Phone size={22} />,
     title: "Telefon",
-    content: "+48 696 246 459",
-    href: "tel:+48696246459",
+    content: "+48 726 165 824",
+    href: "tel:+48726165824",
   },
   {
     icon: <Mail size={22} />,

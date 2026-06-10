@@ -81,7 +81,7 @@ const OfferCard = ({ offer, onOpen, onPreload }: OfferCardProps) => {
           <div>
             <div className={`mb-3.5 h-12 w-12 md:mb-5 md:h-16 md:w-16 ${variant.icon}`}>{offer.icon}</div>
             <p className={`text-xs font-semibold uppercase tracking-[0.26em] ${variant.eyebrow}`}>
-              Oferta Deskorelax
+              Kursy i Obozy
             </p>
             <h3 className={`mt-2 font-heading text-[1.25rem] font-semibold tracking-normal md:mt-4 md:text-3xl ${variant.title}`}>
               {offer.title}

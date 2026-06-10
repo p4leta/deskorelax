@@ -23,7 +23,7 @@ const Footer = () => {
               </span>
               <div className="flex flex-wrap gap-3">
                 <Link to="/oferta" className="cta-inverse">
-                  Zobacz ofertę
+                  Kursy i Obozy
                 </Link>
                 <Link to="/kontakt" className="cta-secondary">
                   Napisz do nas
@@ -37,8 +37,11 @@ const Footer = () => {
                 <Link to="/o-nas" className="hover:text-white">
                   O nas
                 </Link>
+                <Link to="/cennik" className="hover:text-white">
+                  Cennik
+                </Link>
                 <Link to="/oferta" className="hover:text-white">
-                  Oferta
+                  Kursy i Obozy
                 </Link>
                 <Link to="/spot" className="hover:text-white">
                   Spot
@@ -52,6 +55,9 @@ const Footer = () => {
                 <Link to="/kontakt" className="hover:text-white">
                   Kontakt
                 </Link>
+                <Link to="/regulamin" className="hover:text-white">
+                  Regulamin
+                </Link>
               </div>
             </div>
 
@@ -60,7 +66,7 @@ const Footer = () => {
               <div className="space-y-4 text-sm text-white/76">
                 <div className="flex items-start gap-3">
                   <Phone size={16} className="mt-0.5 text-white/78" />
-                  <span>+48 696 246 459</span>
+                  <span>+48 726 165 824</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <Mail size={16} className="mt-0.5 text-white/78" />

@@ -67,7 +67,7 @@ const HomeHeroSection = () => {
               <motion.div variants={heroItem} className="flex w-full flex-col justify-center gap-3.5 sm:w-auto sm:flex-row">
                 <PrefetchLink to="/oferta" className="cta-primary min-h-12 px-6 text-sm md:min-h-14 md:px-8 md:text-base">
                   <Wind size={20} />
-                  Sprawdź ofertę
+                  Kursy i Obozy
                 </PrefetchLink>
                 <a
                   href="https://www.instagram.com/deskorelax/"

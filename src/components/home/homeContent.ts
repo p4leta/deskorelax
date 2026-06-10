@@ -32,7 +32,7 @@ export const homeFeatures: HomeFeature[] = [
 
 export const homeEntryPoints: HomeEntryPoint[] = [
   {
-    title: "Kursy i oferta",
+    title: "Kursy i Obozy",
     description: "Windsurfing, żeglarstwo, obozy i warianty dopasowane do wieku oraz poziomu zaawansowania.",
     href: "/oferta",
   },

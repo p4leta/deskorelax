@@ -9,11 +9,13 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { to: "/", label: "Strona główna" },
   { to: "/o-nas", label: "O nas" },
-  { to: "/oferta", label: "Oferta" },
+  { to: "/cennik", label: "Cennik" },
+  { to: "/oferta", label: "Kursy i Obozy" },
   { to: "/spot", label: "Spot" },
   { to: "/galeria", label: "Galeria" },
   { to: "/wyjazdy", label: "Wyjazdy" },
   { to: "/kontakt", label: "Kontakt" },
+  { to: "/regulamin", label: "Regulamin" },
 ];
 
 const Navbar = () => {
