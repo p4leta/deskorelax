@@ -19,8 +19,8 @@ export const offers: OfferItem[] = [
     desc: "Poznaj podstawy żeglowania i naucz się pewnie prowadzić łódź w różnych warunkach.",
     details: "Kliknij, aby otworzyć ofertówkę.",
     panelTitle: "Kurs żeglarstwa 2026",
-    pdfPages: ["/offer-pages/zeglarstwo-2026/page-1.jpg?v=20260610"],
-    downloadPdfSrc: "/offer-pdfs/zeglarstwo-2026.pdf?v=20260610",
+    pdfPages: ["/offer-pages/zeglarstwo-2026/page-1.jpg?v=20260613"],
+    downloadPdfSrc: "/offer-pdfs/zeglarstwo-2026.pdf?v=20260613",
   },
   {
     slug: "kurs-windsurfingu",
@@ -29,8 +29,8 @@ export const offers: OfferItem[] = [
     desc: "Od pierwszych ślizgów po pewne pływanie na desce z żaglem.",
     details: "Kliknij, aby otworzyć ofertówkę.",
     panelTitle: "Kurs windsurfingu 2026",
-    pdfPages: ["/offer-pages/windsurfing-2026/page-1.jpg?v=20260610"],
-    downloadPdfSrc: "/offer-pdfs/windsurfing-2026.pdf?v=20260610",
+    pdfPages: ["/offer-pages/windsurfing-2026/page-1.jpg?v=20260613"],
+    downloadPdfSrc: "/offer-pdfs/windsurfing-2026.pdf?v=20260613",
   },
   {
     slug: "obozy",
