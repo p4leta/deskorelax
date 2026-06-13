@@ -5,50 +5,20 @@ import type { OfferItem } from "@/data/offers";
 const offerCardVariants: Record<
   string,
   {
-    card: string;
-    icon: string;
-    eyebrow: string;
-    title: string;
-    desc: string;
-    details: string;
-    arrow: string;
+    accent: string;
   }
 > = {
   "kurs-zeglarstwa": {
-    card: "editorial-card surface-seafoam",
-    icon: "icon-badge-seafoam",
-    eyebrow: "text-foreground/42",
-    title: "text-foreground",
-    desc: "text-muted-foreground",
-    details: "text-muted-foreground/76",
-    arrow: "border border-primary/12 bg-white/75 text-foreground",
+    accent: "text-[#1f75ad]",
   },
   "kurs-windsurfingu": {
-    card: "editorial-card-dark surface-ocean",
-    icon: "icon-badge-ocean",
-    eyebrow: "text-white/45",
-    title: "text-white",
-    desc: "text-white/72",
-    details: "text-white/58",
-    arrow: "border border-white/15 bg-white/10 text-white",
+    accent: "text-[#e36f2c]",
   },
   obozy: {
-    card: "editorial-card-dark surface-ocean ring-1 ring-white/10",
-    icon: "icon-badge-ocean",
-    eyebrow: "text-white/45",
-    title: "text-white",
-    desc: "text-white/72",
-    details: "text-white/58",
-    arrow: "border border-white/15 bg-white/10 text-white",
+    accent: "text-[#174f7f]",
   },
   "obozy-dzieciece": {
-    card: "editorial-card surface-seafoam",
-    icon: "icon-badge-seafoam",
-    eyebrow: "text-foreground/42",
-    title: "text-foreground",
-    desc: "text-muted-foreground",
-    details: "text-muted-foreground/76",
-    arrow: "border border-primary/12 bg-white/75 text-foreground",
+    accent: "text-[#e7b93f]",
   },
 };
 
@@ -75,30 +45,32 @@ const OfferCard = ({ offer, onOpen, onPreload }: OfferCardProps) => {
         onFocus={() => onPreload(offer)}
         onMouseEnter={() => onPreload(offer)}
         onTouchStart={() => onPreload(offer)}
-        className={`${variant.card} block h-full w-full rounded-[1rem] p-4 text-left transition-transform duration-200 hover:-translate-y-1 active:scale-[0.985] md:rounded-[1.25rem] md:p-8`}
+        className="block h-full w-full rounded-[1rem] border border-[rgba(32,110,175,0.16)] bg-[rgba(255,255,255,0.72)] p-4 text-left shadow-[0_20px_60px_rgba(19,32,51,0.1)] backdrop-blur-md transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-[rgba(227,111,44,0.28)] hover:shadow-[0_22px_70px_rgba(227,111,44,0.14)] active:scale-[0.985] md:rounded-[1.25rem] md:p-8"
       >
         <div className="flex h-full min-h-[220px] flex-col justify-between gap-4 md:min-h-[320px] md:gap-8">
           <div>
-            <div className={`mb-3.5 h-12 w-12 md:mb-5 md:h-16 md:w-16 ${variant.icon}`}>{offer.icon}</div>
-            <p className={`text-xs font-semibold uppercase tracking-[0.26em] ${variant.eyebrow}`}>
+            <div className={`icon-badge-seafoam mb-3.5 h-12 w-12 bg-white/65 md:mb-5 md:h-16 md:w-16 ${variant.accent}`}>
+              {offer.icon}
+            </div>
+            <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[#132033]/45">
               Kursy i Obozy
             </p>
-            <h3 className={`mt-2 font-heading text-[1.25rem] font-semibold tracking-normal md:mt-4 md:text-3xl ${variant.title}`}>
+            <h3 className="mt-2 font-heading text-[1.25rem] font-semibold tracking-normal text-[#132033] md:mt-4 md:text-3xl">
               {offer.title}
             </h3>
             <p
-              className={`mt-2 max-w-2xl text-[0.76rem] leading-4 md:mt-4 md:text-base md:leading-7 ${variant.desc}`}
+              className="mt-2 max-w-2xl text-[0.76rem] leading-4 text-[#536274] md:mt-4 md:text-base md:leading-7"
             >
               {offer.desc}
             </p>
             <p
-              className={`mt-1.5 text-[0.72rem] italic leading-4 md:mt-4 md:text-sm md:leading-6 ${variant.details}`}
+              className="mt-1.5 text-[0.72rem] italic leading-4 text-[#536274]/80 md:mt-4 md:text-sm md:leading-6"
             >
               {offer.details}
             </p>
           </div>
 
-          <span className={`inline-flex h-12 w-12 items-center justify-center rounded-full shadow-sm ${variant.arrow}`}>
+          <span className={`inline-flex h-12 w-12 items-center justify-center rounded-full border border-[rgba(32,110,175,0.16)] bg-white/65 shadow-sm ${variant.accent}`}>
             <MoveRight size={18} />
           </span>
         </div>

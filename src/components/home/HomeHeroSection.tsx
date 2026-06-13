@@ -1,4 +1,4 @@
-import { Wind } from "lucide-react";
+import { Sailboat } from "lucide-react";
 import { motion } from "framer-motion";
 import InstagramBrandIcon from "@/components/InstagramBrandIcon";
 import PrefetchLink from "@/components/PrefetchLink";
@@ -31,10 +31,10 @@ const heroItem = {
 
 const HomeHeroSection = () => {
   return (
-    <section className="section-frame section-frame-seamless overflow-hidden px-2 pb-8 pt-3 md:px-4 md:pb-20 md:pt-10">
-      <div className="container mx-auto">
+    <section className="section-frame section-frame-seamless overflow-hidden px-0 pb-0 pt-0 md:px-0 md:pb-0 md:pt-0">
+      <div className="mx-auto">
         <motion.div
-          className="media-frame min-h-[520px] md:min-h-[680px]"
+          className="relative min-h-[112vh] overflow-hidden md:min-h-[860px]"
           initial={{ opacity: 0, scale: 0.995 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -52,11 +52,8 @@ const HomeHeroSection = () => {
             animate={{ scale: 1 }}
             transition={{ duration: 0.62, ease: [0.16, 1, 0.3, 1] }}
           />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,27,40,0.06)_0%,rgba(10,27,40,0.22)_42%,rgba(10,27,40,0.58)_100%)]" />
-          <div className="lake-ripple" />
-
           <motion.div
-            className="relative flex min-h-[520px] flex-col justify-center px-4 py-5 text-center md:min-h-[680px] md:px-10 md:py-10 lg:px-14 lg:py-12"
+            className="relative flex min-h-[112vh] flex-col justify-center px-4 py-28 text-center md:min-h-[860px] md:px-10 md:py-32 lg:px-16"
             variants={heroContainer}
             initial="hidden"
             animate="show"
@@ -69,19 +66,22 @@ const HomeHeroSection = () => {
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
-                className="h-auto w-full max-w-[76rem] drop-shadow-[0_18px_46px_rgba(8,24,36,0.44)]"
+                className="h-auto w-full max-w-[76rem] drop-shadow-[0_10px_28px_rgba(0,0,0,0.45)]"
               />
 
               <motion.div variants={heroItem} className="flex w-full flex-col justify-center gap-3.5 sm:w-auto sm:flex-row">
-                <PrefetchLink to="/oferta" className="cta-primary min-h-12 px-6 text-sm md:min-h-14 md:px-8 md:text-base">
-                  <Wind size={20} />
+                <PrefetchLink
+                  to="/oferta"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-white bg-white px-6 text-sm font-semibold text-black transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-white/90 md:min-h-14 md:px-8 md:text-base"
+                >
+                  <Sailboat size={20} className="text-[#b59b72]" />
                   Kursy i Obozy
                 </PrefetchLink>
                 <a
                   href="https://www.instagram.com/deskorelax/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cta-secondary min-h-12 px-6 text-sm md:min-h-14 md:px-8 md:text-base"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-white/20 bg-black/40 px-6 text-sm font-semibold text-white backdrop-blur transition-[transform,background-color,border-color] duration-200 hover:-translate-y-0.5 hover:border-white/35 hover:bg-black/50 md:min-h-14 md:px-8 md:text-base"
                 >
                   <InstagramBrandIcon size={20} />
                   Zobacz Instagram

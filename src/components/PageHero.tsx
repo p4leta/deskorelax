@@ -27,8 +27,8 @@ const PageHero = ({
 }: PageHeroProps) => {
   return (
     <section className={cn("section-frame section-frame-seamless pt-3 pb-8 md:pt-12 md:pb-12", className)}>
-      <div className="container mx-auto md:px-4">
-        <Reveal className={cn("subpage-hero", panelClassName)}>
+      <Reveal className={cn("subpage-hero", panelClassName)}>
+        <div className="container mx-auto px-3 md:px-8">
           <div className={cn("subpage-hero-grid relative", reverseOnDesktop && "lg:grid-cols-[minmax(26rem,1.05fr)_minmax(0,0.95fr)] xl:grid-cols-[minmax(30rem,1fr)_minmax(0,1fr)]")}>
             <div className={cn("w-full min-w-0 space-y-7", contentClassName)}>
               <div className="space-y-5">
@@ -51,8 +51,8 @@ const PageHero = ({
               </div>
             ) : null}
           </div>
-        </Reveal>
-      </div>
+        </div>
+      </Reveal>
     </section>
   );
 };

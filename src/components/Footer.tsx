@@ -7,9 +7,9 @@ const googleMapsLink = "https://maps.app.goo.gl/5q5J3zmwxKsyaU7N6";
 
 const Footer = () => {
   return (
-    <footer className="relative px-3 pb-5 pt-10 md:px-4 md:pb-8 md:pt-16">
-      <div className="container mx-auto">
-        <Reveal className="section-shell-dark surface-ocean overflow-hidden px-4 py-8 md:px-10 md:py-12">
+    <footer className="relative pt-10 md:pt-16">
+      <Reveal className="edge-band footer-band px-3 py-8 md:px-8 md:py-12">
+        <div className="container mx-auto">
           <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)_minmax(0,0.8fr)]">
             <div className="space-y-5">
               <span className="eyebrow p-2">
@@ -97,8 +97,8 @@ const Footer = () => {
           <div className="relative mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/45 md:flex-row md:items-center md:justify-between">
             <p>© {new Date().getFullYear()} Deskorelax. Wszelkie prawa zastrzeżone.</p>
           </div>
-        </Reveal>
-      </div>
+        </div>
+      </Reveal>
     </footer>
   );
 };

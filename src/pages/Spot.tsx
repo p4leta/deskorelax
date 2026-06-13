@@ -12,29 +12,28 @@ const Spot = () => {
       <PageHero
         title="Idealne miejsce do nauki i zabawy na wodzie"
         description="Płytka woda, stabilny wiatr i przestrzeń, która pracuje zarówno dla pierwszych prób, jak i regularnego pływania."
+        className="pb-0 pt-0 md:pb-0 md:pt-2 [&_.subpage-hero]:pb-2 md:[&_.subpage-hero]:pb-4"
         panelClassName="surface-seafoam"
         reverseOnDesktop
-        contentClassName="max-w-[42rem] self-start justify-self-start pt-2 md:pt-0 lg:max-w-none lg:pt-2"
-        asideClassName="w-full max-w-[56rem] lg:max-w-none"
+        contentClassName="max-w-[42rem] self-center justify-self-start pt-0 lg:max-w-none [&_.subpage-title]:text-[clamp(2rem,5.4vw,4rem)] [&_p]:max-w-xl"
+        asideClassName="w-full max-w-[44rem] self-center lg:max-w-[48rem]"
         aside={
-          <div className="editorial-card surface-ocean p-2 md:p-3">
-            <div className="media-frame aspect-[4/3] w-full overflow-hidden rounded-[1.15rem] bg-white/90 md:rounded-[1.55rem]">
-              <img
-                src={spotHeroMap}
-                alt="Mapa spotu Deskorelax"
-                loading="eager"
-                decoding="async"
-                className="h-full w-full object-contain md:object-cover"
-              />
-            </div>
+          <div className="aspect-square w-full overflow-hidden rounded-[1.15rem] md:rounded-[1.55rem]">
+            <img
+              src={spotHeroMap}
+              alt="Mapa spotu Deskorelax"
+              loading="eager"
+              decoding="async"
+              className="h-full w-full object-contain"
+            />
           </div>
         }
       />
 
-      <section className="px-3 py-3 md:px-4 md:pb-16">
-        <div className="container mx-auto grid gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(360px,0.96fr)]">
-          <Reveal className="section-shell surface-sunset flex h-full flex-col p-2 md:p-4">
-            <div className="flex h-full flex-col gap-3 p-2 md:gap-4 md:p-3">
+      <section className="edge-band edge-band-light pb-8 pt-0 md:pb-16 md:pt-1">
+        <div className="container mx-auto grid gap-7 px-3 md:gap-10 md:px-8">
+          <Reveal className="flex h-full flex-col border-t border-primary/15 pt-4 md:pt-6">
+            <div className="flex h-full flex-col gap-3 md:gap-4">
               <div className="flex flex-col gap-2.5 md:flex-row md:items-end md:justify-between">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.28em] text-foreground/42">Google Maps</p>
@@ -65,16 +64,16 @@ const Spot = () => {
             </div>
           </Reveal>
 
-          <Reveal className="section-shell-dark surface-ocean flex h-full flex-col p-2 md:p-4" delay={0.08}>
-            <div className="flex h-full flex-col gap-3 p-2 md:gap-4 md:p-3">
+          <Reveal className="flex h-full flex-col border-t border-primary/15 pt-4 md:pt-6" delay={0.08}>
+            <div className="flex h-full flex-col gap-3 md:gap-4">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/45">Windy</p>
-                <h2 className="mt-1.5 font-heading text-[1.12rem] font-semibold tracking-normal text-white md:mt-2 md:text-[1.75rem]">
+                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-foreground/42">Windy</p>
+                <h2 className="mt-1.5 font-heading text-[1.12rem] font-semibold tracking-normal text-foreground md:mt-2 md:text-[1.75rem]">
                   Warunki wiatrowe pod ręką.
                 </h2>
               </div>
 
-              <div className="flex-1 overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5">
+              <div className="media-frame flex-1 overflow-hidden">
                 <iframe
                   width="650"
                   height="450"

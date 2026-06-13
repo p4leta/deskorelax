@@ -2,7 +2,7 @@ import RouteLoadingFallback from "@/components/RouteLoadingFallback";
 import Layout from "@/components/Layout";
 import MotionPage from "@/components/motion/MotionPage";
 import { AnimatePresence } from "framer-motion";
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, useLayoutEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { routeLoaders, scheduleFullAppWarmup } from "@/lib/route-prefetch";
 import Index from "./pages/Index";
@@ -17,11 +17,43 @@ const Cennik = lazy(routeLoaders["/cennik"]);
 const NotFound = lazy(routeLoaders["*"]);
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, [pathname]);
+  useLayoutEffect(() => {
+    const root = document.documentElement;
+    const previousRootScrollBehavior = root.style.scrollBehavior;
+    const previousBodyScrollBehavior = document.body.style.scrollBehavior;
+
+    root.style.scrollBehavior = "auto";
+    document.body.style.scrollBehavior = "auto";
+
+    const scrollTop = () => {
+      window.scrollTo(0, 0);
+      root.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+
+    let secondFrame = 0;
+    const restoreScrollBehavior = () => {
+      root.style.scrollBehavior = previousRootScrollBehavior;
+      document.body.style.scrollBehavior = previousBodyScrollBehavior;
+    };
+
+    scrollTop();
+    const firstFrame = window.requestAnimationFrame(() => {
+      scrollTop();
+      secondFrame = window.requestAnimationFrame(() => {
+        scrollTop();
+        restoreScrollBehavior();
+      });
+    });
+
+    return () => {
+      window.cancelAnimationFrame(firstFrame);
+      window.cancelAnimationFrame(secondFrame);
+      restoreScrollBehavior();
+    };
+  }, [pathname, search]);
 
   return null;
 };

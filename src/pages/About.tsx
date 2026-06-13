@@ -1,25 +1,5 @@
 import PageHero from "@/components/PageHero";
-import { Award, Heart, Users } from "lucide-react";
 import aboutHeroWindsurf from "@/assets/about-hero-windsurf.jpg";
-import Reveal from "@/components/motion/Reveal";
-
-const values = [
-  {
-    icon: <Heart size={28} />,
-    title: "Pasja",
-    desc: "Windsurfing to nasza miłość. Dzielimy się nią z radością.",
-  },
-  {
-    icon: <Award size={28} />,
-    title: "Doświadczenie",
-    desc: "Wykwalifikowani instruktorzy z certyfikatami i latami praktyki.",
-  },
-  {
-    icon: <Users size={28} />,
-    title: "Społeczność",
-    desc: "Budujemy społeczność surferów, którzy się wspierają i dobrze bawią.",
-  },
-];
 
 const About = () => {
   return (
@@ -37,40 +17,17 @@ Do dziś Deskorelax to przede wszystkim ludzie, klimat i wspólna zajawka.`}
         contentClassName="max-w-[42rem] justify-self-start lg:max-w-none lg:self-start"
         asideClassName="w-full max-w-[56rem] lg:max-w-none"
         aside={
-          <div className="editorial-card surface-sunset p-2 md:p-3">
-            <div className="media-frame aspect-[4/3] w-full overflow-hidden rounded-[1.55rem]">
-              <img
-                src={aboutHeroWindsurf}
-                alt="Windsurfing w Deskorelax"
-                loading="eager"
-                decoding="async"
-                className="h-full w-full object-cover"
-              />
-            </div>
+          <div className="aspect-[4/3] w-full overflow-hidden rounded-[1.55rem]">
+            <img
+              src={aboutHeroWindsurf}
+              alt="Windsurfing w Deskorelax"
+              loading="eager"
+              decoding="async"
+              className="h-full w-full object-cover"
+            />
           </div>
         }
       />
-
-      <section className="px-2 py-2.5 md:px-4 md:pb-16">
-        <div className="container mx-auto">
-          <div className="grid gap-4 md:grid-cols-3 md:gap-6">
-            {values.map((item) => {
-              return (
-              <Reveal as="article" key={item.title} className="editorial-card-dark surface-ocean p-4 text-center md:p-10">
-                <div className="icon-badge-ocean mx-auto mb-4 h-14 w-14 md:mb-6 md:h-20 md:w-20">
-                  {item.icon}
-                </div>
-                <h3 className="font-heading text-[1.3rem] font-semibold tracking-normal text-white md:text-3xl">
-                  {item.title}
-                </h3>
-                <p className="mx-auto mt-2.5 max-w-xs text-[0.8rem] leading-5 text-white/74 md:mt-6 md:text-lg md:leading-8">
-                  {item.desc}
-                </p>
-              </Reveal>
-            )})}
-          </div>
-        </div>
-      </section>
     </>
   );
 };

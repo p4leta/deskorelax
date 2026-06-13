@@ -23,9 +23,9 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-40 px-1.5 pt-1.5 md:px-4 md:pt-4">
+    <header className="pointer-events-none fixed left-0 right-0 top-0 z-50 px-3 pt-3 md:px-8 md:pt-6">
       <div className="container mx-auto">
-        <nav className="section-shell px-2 py-2 md:px-5 md:py-3">
+        <nav className="pointer-events-auto section-shell px-2 py-2 md:px-5 md:py-3">
           <div className="flex items-center justify-between gap-4">
             <PrefetchLink to="/" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-[0_10px_30px_rgba(15,32,46,0.14)] md:h-14 md:w-14">

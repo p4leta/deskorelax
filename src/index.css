@@ -74,11 +74,13 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    background-image:
-      linear-gradient(115deg, rgba(255, 244, 224, 0.7), rgba(239, 249, 250, 0.52) 42%, rgba(247, 243, 235, 0.82)),
-      radial-gradient(circle at 14% 8%, rgba(255, 169, 92, 0.22), transparent 22%),
-      radial-gradient(circle at 88% 22%, rgba(28, 141, 194, 0.14), transparent 24%),
-      radial-gradient(circle at 36% 86%, rgba(255, 204, 107, 0.18), transparent 26%);
+    background:
+      radial-gradient(circle at 7% 18%, rgba(42, 132, 184, 0.2) 0 16rem, transparent 28rem),
+      radial-gradient(circle at 92% 14%, rgba(205, 86, 42, 0.18) 0 18rem, transparent 32rem),
+      radial-gradient(circle at 18% 78%, rgba(225, 128, 160, 0.09) 0 15rem, transparent 28rem),
+      radial-gradient(circle at 84% 78%, rgba(32, 110, 175, 0.13) 0 17rem, transparent 31rem),
+      linear-gradient(115deg, rgba(255, 247, 232, 0.94), rgba(247, 241, 226, 0.98) 46%, rgba(239, 246, 243, 0.92));
+    background-attachment: fixed;
     min-height: 100vh;
   }
 
@@ -107,7 +109,7 @@
     position: fixed;
     inset: 0;
     z-index: -1;
-    opacity: 0.5;
+    opacity: 0.22;
     pointer-events: none;
     background-image:
       linear-gradient(110deg, rgba(16, 62, 91, 0.035) 1px, transparent 1px),
@@ -132,6 +134,50 @@
 
   .section-frame-seamless::before {
     display: none;
+  }
+
+  .edge-band {
+    @apply relative overflow-hidden;
+    background: transparent;
+  }
+
+  .edge-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    display: none;
+  }
+
+  .edge-band-light {
+    background: transparent;
+  }
+
+  .edge-band-dark {
+    color: inherit;
+    background: transparent;
+  }
+
+  .edge-band-dark p,
+  .edge-band-dark li {
+    color: inherit;
+  }
+
+  .edge-band-dark .section-title,
+  .edge-band-dark .section-lead {
+    color: inherit;
+  }
+
+  .footer-band {
+    color: white;
+    background:
+      linear-gradient(180deg, rgba(8, 30, 45, 0.2), rgba(8, 30, 45, 0.44)),
+      linear-gradient(135deg, rgba(23, 125, 174, 0.98), rgba(12, 57, 88, 0.98));
+  }
+
+  .footer-band p,
+  .footer-band li {
+    color: rgba(232, 238, 242, 0.76);
   }
 
   .section-shell {
@@ -310,7 +356,8 @@
   }
 
   .subpage-hero {
-    @apply section-shell px-4 py-7 md:px-10 md:py-12;
+    @apply relative overflow-hidden px-0 py-7 md:py-12;
+    background: transparent;
   }
 
   .subpage-hero-grid {
