@@ -1,5 +1,6 @@
 import { startTransition, useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
+import { ExternalLink } from "lucide-react";
 import OfferCard from "@/components/offers/OfferCard";
 import OfferPreviewModal from "@/components/offers/OfferPreviewModal";
 import { offers, type OfferItem } from "@/data/offers";
@@ -59,6 +60,22 @@ const Offer = () => {
                 onPreload={preloadOfferPreview}
               />
             ))}
+          </div>
+
+          <div
+            className={`mt-8 flex justify-center transition-opacity duration-300 md:mt-10 ${
+              activeOffer ? "pointer-events-none opacity-20" : "opacity-100"
+            }`}
+          >
+            <a
+              href="https://forms.gle/joY5qomS27JwY1G6A"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-primary min-h-14 px-10 py-4 text-base md:min-h-16 md:px-12 md:text-lg"
+            >
+              Zapisz się!
+              <ExternalLink size={20} />
+            </a>
           </div>
         </div>
       </section>
