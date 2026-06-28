@@ -15,6 +15,7 @@ type NavigatorWithConnection = Navigator & {
 type PrefetchableRoute =
   | "/o-nas"
   | "/oferta"
+  | "/wingfoil"
   | "/spot"
   | "/galeria"
   | "/wyjazdy"
@@ -26,6 +27,7 @@ type PrefetchableRoute =
 const routeModuleLoaders: Record<PrefetchableRoute, RouteModuleLoader> = {
   "/o-nas": () => import("../pages/About"),
   "/oferta": () => import("../pages/Offer"),
+  "/wingfoil": () => import("../pages/Wingfoil"),
   "/spot": () => import("../pages/Spot"),
   "/galeria": () => import("../pages/Gallery"),
   "/wyjazdy": () => import("../pages/Trips"),

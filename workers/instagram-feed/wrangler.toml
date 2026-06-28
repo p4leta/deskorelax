@@ -1,0 +1,19 @@
+name = "deskorelax-instagram-feed"
+main = "src/index.ts"
+compatibility_date = "2026-06-01"
+
+[vars]
+ALLOWED_ORIGINS = "http://localhost:8080,http://localhost:8081,http://localhost:8082"
+
+[[kv_namespaces]]
+binding = "INSTAGRAM_FEED_KV"
+id = "2c4499eeddc2477fa6fd59d5207ec5aa"
+preview_id = "bafc0db4b3684772af71928f4db2ff51"
+
+[[r2_buckets]]
+binding = "INSTAGRAM_MEDIA_BUCKET"
+bucket_name = "deskorelax-instagram-media"
+preview_bucket_name = "deskorelax-instagram-media-preview"
+
+[triggers]
+crons = ["0 3 * * *"]

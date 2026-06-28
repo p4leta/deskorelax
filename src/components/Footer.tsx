@@ -43,6 +43,9 @@ const Footer = () => {
                 <Link to="/oferta" className="hover:text-white">
                   Kursy i Obozy
                 </Link>
+                <Link to="/wingfoil" className="hover:text-white">
+                  Wingfoil
+                </Link>
                 <Link to="/spot" className="hover:text-white">
                   Spot
                 </Link>

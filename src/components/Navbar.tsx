@@ -11,6 +11,7 @@ const navLinks = [
   { to: "/o-nas", label: "O nas" },
   { to: "/cennik", label: "Cennik" },
   { to: "/oferta", label: "Kursy i Obozy" },
+  { to: "/wingfoil", label: "Wingfoil" },
   { to: "/spot", label: "Spot" },
   { to: "/galeria", label: "Galeria" },
   { to: "/wyjazdy", label: "Wyjazdy" },

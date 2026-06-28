@@ -6,48 +6,111 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## Instagram feed on `/galeria`
+## Instagram gallery architecture
 
-The gallery page renders up to 16 posts in a 4-column desktop grid and keeps the existing Instagram CTA button below it.
+The `/galeria` page consumes a cached Instagram feed from a Cloudflare Worker. The browser never calls Instagram directly and never receives Instagram API tokens.
 
-### What was added
+The Worker:
 
-- Public feed endpoint: `/api/instagram-feed`
-- Admin connect route: `/api/instagram/connect/start`
-- Admin callback route: `/api/instagram/connect/callback`
-- Scheduled refresh route: `/api/instagram/refresh`
-- Supabase schema: `supabase/schema.sql`
-- Vercel cron schedule: `vercel.json`
+- Refreshes the long-lived Instagram token server-side.
+- Reads Instagram media through `graph.instagram.com/me/media`.
+- Copies each image, or video thumbnail, into R2 object storage.
+- Stores normalized public feed JSON in KV.
+- Serves cached JSON through `GET /instagram/feed`.
+- Serves copied media through `GET /instagram/media/:id`.
+- Supports manual sync through protected `POST /admin/sync`.
+- Runs a daily scheduled sync.
 
-### Required setup
+If a sync fails and a cached feed already exists, the Worker keeps serving that old feed with `stale: true` and an error message.
 
-1. Convert the Instagram account to a professional account.
-2. Create a Meta app for Instagram and configure the redirect URL:
-   - `https://your-domain.example/api/instagram/connect/callback`
-3. Create a Supabase project and run `supabase/schema.sql`.
-4. Add the environment variables from `.env.example` to your deployment.
-5. Deploy the app on Vercel or another host that supports serverless routes and scheduled jobs.
-6. Open this URL in the browser to connect the Instagram account:
-   - `https://your-domain.example/api/instagram/connect/start?admin_secret=YOUR_INSTAGRAM_ADMIN_SECRET`
-7. Confirm that `/galeria` starts showing posts.
+## Frontend configuration
 
-### Automatic updates
+Set this variable for the Vite app:
 
-- The public site never talks to Instagram directly.
-- `/api/instagram-feed` reads from Supabase cache and refreshes the feed if the cache is stale.
-- `vercel.json` runs `/api/instagram/refresh` once per day.
-- The refresh route also refreshes the long-lived Instagram token when it gets close to expiry.
+```bash
+VITE_INSTAGRAM_FEED_URL=https://your-worker.example.workers.dev/instagram/feed
+```
 
-### Manual refresh
+The frontend helper limits rendered items to 16 and resolves relative media URLs from the Worker against the configured feed URL.
 
-To force a sync manually:
+## Cloudflare Worker setup
+
+Worker files live in `workers/instagram-feed`.
+
+### 1. Create storage
+
+Create a KV namespace:
+
+```bash
+npx wrangler kv namespace create INSTAGRAM_FEED_KV
+npx wrangler kv namespace create INSTAGRAM_FEED_KV --preview
+```
+
+Create an R2 bucket:
+
+```bash
+npx wrangler r2 bucket create deskorelax-instagram-media
+npx wrangler r2 bucket create deskorelax-instagram-media-preview
+```
+
+Copy the returned KV namespace IDs into `workers/instagram-feed/wrangler.toml`.
+
+### 2. Configure allowed origins
+
+Set `ALLOWED_ORIGINS` in `workers/instagram-feed/wrangler.toml` or in Cloudflare:
+
+```toml
+[vars]
+ALLOWED_ORIGINS = "https://your-site.example,http://localhost:8080"
+```
+
+Use comma-separated origins. Do not include trailing slashes.
+
+### 3. Set secrets
+
+Store secrets in Cloudflare, not in frontend env files:
+
+```bash
+npx wrangler secret put INSTAGRAM_ACCESS_TOKEN --config workers/instagram-feed/wrangler.toml
+npx wrangler secret put ADMIN_SYNC_SECRET --config workers/instagram-feed/wrangler.toml
+```
+
+`INSTAGRAM_ACCESS_TOKEN` should be a long-lived Instagram token. The Worker uses it as the bootstrap token and then stores refreshed token metadata in KV.
+
+### 4. Deploy the Worker
+
+```bash
+npx wrangler deploy --config workers/instagram-feed/wrangler.toml
+```
+
+### 5. Run the first manual sync
 
 ```bash
 curl -X POST \
-  -H "Authorization: Bearer YOUR_CRON_SECRET" \
-  https://your-domain.example/api/instagram/refresh
+  -H "Authorization: Bearer YOUR_ADMIN_SYNC_SECRET" \
+  https://your-worker.example.workers.dev/admin/sync
 ```
 
-### Environment variables
+Then confirm the cached public feed:
 
-See `.env.example` for the full list.
+```bash
+curl https://your-worker.example.workers.dev/instagram/feed
+```
+
+### 6. Deploy the frontend
+
+Set `VITE_INSTAGRAM_FEED_URL` in the frontend deployment environment and redeploy the Vite app.
+
+## Local development
+
+Run the frontend:
+
+```bash
+npm run dev
+```
+
+Run tests:
+
+```bash
+npm run test
+```

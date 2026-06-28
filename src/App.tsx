@@ -8,6 +8,7 @@ import { routeLoaders, scheduleFullAppWarmup } from "@/lib/route-prefetch";
 import Index from "./pages/Index";
 const About = lazy(routeLoaders["/o-nas"]);
 const Offer = lazy(routeLoaders["/oferta"]);
+const Wingfoil = lazy(routeLoaders["/wingfoil"]);
 const Spot = lazy(routeLoaders["/spot"]);
 const Gallery = lazy(routeLoaders["/galeria"]);
 const Contact = lazy(routeLoaders["/kontakt"]);
@@ -82,6 +83,7 @@ const AnimatedRoutes = () => {
           <Route path="/" element={<Index />} />
           <Route path="/o-nas" element={<About />} />
           <Route path="/oferta" element={<Offer />} />
+          <Route path="/wingfoil" element={<Wingfoil />} />
           <Route path="/spot" element={<Spot />} />
           <Route path="/galeria" element={<Gallery />} />
           <Route path="/wyjazdy" element={<Trips />} />
